@@ -1,0 +1,1376 @@
+* {
+	position: relative;
+	box-sizing: border-box;
+
+}
+
+body, html {
+	font-family: 'Noto Sans TC', sans-serif !important;
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none !important;
+	color: #000;
+}
+
+.u-block {
+	display: block;
+}
+
+.u-cf:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+/* loading */
+#app{
+	position: fixed;
+	background-color: #fff;
+	z-index: 101;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.5s ease-in-out;
+
+}
+.complete{
+	top: -100% !important;
+}
+/* loading */
+
+/* transtiton */
+ul.transtiton{
+	display: flex;
+	position: absolute;
+	z-index: 1020;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	pointer-events: none;
+
+}
+ul.transtiton li{
+	transform: scaleY(0);
+	background: white;
+	width: 20%;
+}
+/* transtiton */
+.wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.navbar {
+	background-color: transparent;
+	position: static;
+	top: 0px;
+	min-height: 0px;
+	margin-bottom: 0px;
+	border: 0px solid transparent;
+	border-radius: 0px;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+
+.navbar .logo {
+	float: left;
+	height: 100px;
+	margin-top: 20px;
+}
+
+.navbar .logo img {
+	height: 100%;
+}
+
+.menu {
+	float: right;
+	display: inline-block;
+	margin-bottom: 0px;
+	padding-left: 0px;
+}
+
+.menuhearder {
+	display: none;
+}
+
+.menu>li {
+	float: left;
+}
+
+.menu>li>a {
+	display: block;
+	line-height: 24px;
+	padding: 28px 16px;
+	color: rgb(255, 255, 255);
+	font-size: 1.05rem;
+	transition: all .3s;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+/* banar */
+.togglelist {
+	display: none;
+	line-height: 24px;
+	position: absolute;
+	right: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 10px;
+	cursor: pointer;
+	-webkit-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	z-index: 10000;
+}
+
+
+.menubar {
+	width: 30px;
+	height: 30px;
+	position: relative;
+}
+
+.menubar span {
+	display: block;
+	position: absolute;
+	height: 2px;
+	width: 100%;
+	background: #f7f7f7;
+	opacity: 1;
+	left: 0;
+	-webkit-transition: .5s ease-in-out;
+	transition: .2s ease-in-out;
+}
+
+.menubar span:nth-child(1) {
+	top: 0px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+
+.menubar span:nth-child(2) {
+	top: 8px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+
+.menubar span:nth-child(3) {
+	top: 16px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+
+.menubar.open span:nth-child(1) {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: 4px;
+	left: 5px;
+}
+
+.menubar.open span:nth-child(2) {
+	width: 0%;
+	opacity: 0;
+}
+
+.menubar.open span:nth-child(3) {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	top: 25px;
+	left: 5px;
+}
+
+.menu>li>a:hover {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.menu>li>a.currents:after, .menu>li:hover>a:after {
+	width: 100%;
+}
+
+.menu .dropdown {
+	position: absolute;
+	left: 50%;
+	top: 105%;
+	transform: translateX(-50%);
+	background-color: #ffffff;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+}
+
+.menu>li:hover .dropdown {
+	opacity: 1;
+	visibility: visible;
+	top: 100%;
+}
+
+.menu .dropdown>li>a {
+	display: block;
+	line-height: 25px;
+	padding: 12px 24px;
+	color: #fff;
+	width: 200px;
+	letter-spacing: 1px;
+	transition: all 0.2s;
+	border-bottom: 1px solid #c5c5c5;
+}
+
+.menu .dropdown>li>a:hover {
+	background-color: #eef125;
+	text-decoration: none;
+}
+
+.menu .btn-submenu {
+	display: none;
+}
+
+/* 第三層 */
+.menu ul li>ul {
+	position: absolute;
+	left: 105% !important;
+	top: 0 !important;
+	transform: translateX(0%) !important;
+	background-color: #ffffff;
+	opacity: 0 !important;
+	visibility: hidden !important;
+	transition: all 0.3s;
+}
+
+.menu ul li:hover>ul {
+	position: absolute;
+	left: 101% !important;
+	top: 0px !important;
+	transform: translateX(0%);
+	background-color: #fcfcfc;
+	transition: all 0.3s;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+.menuoverflow {
+	transition-duration: 300ms;
+	transform: translate(220px, 0px);
+}
+
+/* li向下箭頭符號 */
+.fa-caret-down::after {
+	content: "\f0d7";
+}
+
+.fa-caret-down::before {
+	content: "";
+}
+
+.body-overflow {
+	overflow-x: hidden;
+}
+
+
+
+.box {
+	position: fixed;
+	width: 100%;
+	animation-fill-mode: both;
+	transition: all 1.25s ease-out;
+	animation-fill-mode: both;
+	animation-duration: 1s;
+	animation-name: fadeInDown;
+}
+
+
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+
+
+
+/* banner */
+.banner{
+	position: relative;
+}
+.banner>.your-class>img {
+	max-height: 80%;
+}
+
+/* section1 */
+.section1{
+	position: relative;
+	margin-bottom: 9.3rem;
+
+}
+.cloud {
+	position: absolute;
+	top: -28px;
+	width: 20.53333%;
+	height: 100px;
+}
+
+.top_cloud_1 {
+	left: -10px;
+}
+
+.top_cloud_2 {
+	right: 0;
+}
+
+.top_cloud_2>img, .top_cloud_1>img {
+	width: 100%;
+	height: 24.2rem;
+}
+
+.titleh1 {
+	margin-bottom: 12rem;
+}
+
+.title {
+	text-align: center;
+	padding-top: 8%;
+	letter-spacing: 18px;
+	font-size: 3.55rem;
+	line-height: 80px;
+}
+
+.title::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 60px;
+	width: 140px;
+	left: 34%;
+	height: 40px;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/未命名-1工作區域-2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.title::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 74px;
+	width: 76px;
+	right: 38%;
+	height: 21px;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/未命名-1工作區域-9.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.titleh1::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: 30px;
+	left: 30%;
+	margin-left: -100px;
+	width: 76px;
+	height: 21px;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/未命名-1工作區域-9.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+.titleh1::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: 30px;
+	right: 20%;
+	width: 120px;
+	height: 34px;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/未命名-1工作區域-2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.titleh1>h2 {
+	text-align: center;
+}
+
+.titleh1>h2::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: -5px;
+	right: 33%;
+	width: 73px;
+	height: 34px;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/未命名-1工作區域-3.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.titleh1>h2::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: -38px;
+	left: 40%;
+	width: 80px;
+	height: 25px;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/未命名-1工作區域-7.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.content_h3 {
+	text-align: center;
+	margin-top: 30px;
+	position: relative;
+}
+
+.content_hr {
+	width: 11%;
+	margin: 2rem auto;
+	border: 1.5px solid;
+}
+
+.content_p {
+	text-align: center;
+	line-height: 2.45rem;
+}
+
+.cloud_content_p1 {
+	display: inline-block;
+	position: absolute;
+	top: 60%;
+    left: -100px;
+    width: 400px;
+    height: 15%;
+	background-image: url('../images/小雲-1.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.cloud_content_p2 {
+	display: inline-block;
+	position: absolute;
+	top: 85%;
+    right: -60px;
+    width: 270px;
+    height: 10%;
+	background-image: url('../images/小雲-3.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.cloud_content_p3 {
+	display: inline-block;
+	position: absolute;
+	bottom: -10%;
+    left: 300px;
+    width: 10%;
+    height: 6%;
+	background-image: url('../images/小雲-2.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+/* section2 */
+.section2::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: -50px;
+	width: 100%;
+	height: 66px;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/海-1.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.section2::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 500px;
+	height: 115px;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/船.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 3;
+}
+
+.content_buttom {
+	max-width: 14rem;
+	margin: 0 auto;
+	line-height: 1;
+	margin-bottom: 8rem;
+}
+
+.about_button {
+	position: relative;
+	display: block;
+	text-align: center;
+	font-size: 1.02rem;
+	letter-spacing: 6px;
+	padding: 12px 0;
+	border: solid 1px;
+	border-radius: 100px;
+	border-color: rgba(0, 0, 0, .2);
+	color: rgb(105, 105, 105);
+	transition: all 0.3s;
+}
+
+.about_button:hover {
+	color: rgb(44, 44, 44);
+	border-color: rgba(0, 0, 0, 0.856);
+	box-shadow: 1px 1px 3px rgb(209, 209, 209);
+}
+
+
+
+.c_title_en {
+	font-family: 'Cormorant Garamond', serif;
+	letter-spacing: 6px;
+	font-size: 3.2rem;
+}
+
+.title1_tw {
+	display: flex;
+	align-items: center;
+	font-size: 1.2rem;
+	line-height: 1;
+	letter-spacing: .2em;
+	margin-bottom: 4rem;
+}
+
+.title1_tw::after {
+	content: '';
+	display: block;
+	height: 1px;
+	background-color: rgba(0, 0, 0, .1);
+	width: 8rem;
+	margin-top: 0.2rem;
+	margin-left: 0.8rem;
+}
+
+.section2 {
+	background: linear-gradient(180deg, rgb(255, 255, 255), #dcd1d7);
+	margin-bottom: 125px;
+	padding: 0.5rem 0px 10.5rem 0px;
+}
+
+.nextwrapper {
+	position: absolute;
+	top: -100px;
+	right: 60px;
+	font-size: 20px;
+	color: #a25b41;
+	padding: 14px 15px;
+	border: 1px solid #a25b41;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.nextwrapper:hover {
+	background-color: #a25b41;
+	color: #ffffff;
+}
+
+.prevwrapper {
+	position: absolute;
+	top: -100px;
+	right: 160px;
+	font-size: 20px;
+	color: #a25b41;
+	padding: 14px 15px;
+	border: 1px solid #a25b41;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.prevwrapper:hover {
+	background-color: #a25b41;
+	color: #ffffff;
+}
+
+.prev {
+	position: absolute;
+	top: -90px;
+	left: 10px;
+	font-size: 20px;
+	color: #a25b41;
+	padding: 14px 15px;
+	border: 1px solid #a25b41;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.prev:hover {
+	background-color: #a25b41;
+	color: #ffffff;
+}
+
+.next {
+	position: absolute;
+	top: -90px;
+	left: 120px;
+	font-size: 20px;
+	color: #a25b41;
+	padding: 14px 15px;
+	border: 1px solid #a25b41;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.next:hover {
+	background-color: #a25b41;
+	color: #ffffff;
+}
+
+.title_en_left {
+	text-align: end;
+}
+
+.title1_tw_left {
+	text-align: end;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	font-size: 1.2rem;
+	line-height: 1;
+	letter-spacing: .2em;
+}
+
+.title1_tw_left::before {
+	content: '';
+	display: block;
+	height: 1px;
+	background-color: rgba(0, 0, 0, .1);
+	width: 8rem;
+	margin-top: 0.2rem;
+	margin-right: 0.8rem;
+}
+
+/* section3 */
+.section3 {
+	margin-bottom: 100px;
+}
+
+.title1_tw_Food {
+	position: relative;
+}
+
+.title1_tw_Food::before {
+	content: "";
+	display: inline-block;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/tree.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: -95px;
+	right: 45px;
+	width: 250px;
+	height: 105px;
+}
+
+.title1_tw_Food::after {
+	width: 90%;
+}
+
+.Food_content_img {
+	position: relative;
+	margin: 0 30px;
+}
+
+.Food_content_img>img {
+	width: 100%;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .6s ease;
+	background-color: #454545e0;
+}
+
+.Food_content_img:hover .overlay {
+	opacity: 1;
+}
+
+.overlay {
+	padding: 30px;
+}
+
+.food_a_text {
+	border: 1px solid #fff;
+	display: block;
+	padding: 20px;
+	height: 100%;
+	color: #fff;
+}
+
+.food_a_text:hover {
+	color: #fff;
+}
+
+.food_a_text>p {
+	letter-spacing: 1px;
+	line-height: 25px;
+	font-size: 0.9rem;
+}
+
+/* section4 */
+.section4 {
+	margin-bottom: 180px;
+}
+
+.c-card__figure {
+	margin-bottom: 2.5rem;
+	width: 100%;
+	border-radius: 0.5rem;
+
+}
+
+.c-card__figure>img {
+	width: 80%;
+	border-radius: 3px;
+
+}
+
+.c-card__time {
+	font-size: 1.0rem;
+	margin-bottom: 0.1rem;
+	font-family: "Cormorant Garamond", serif;
+	line-height: 1;
+	letter-spacing: .05em;
+	color: #c5c5c5;
+}
+
+.c-card__title {
+	font-size: 1.15rem;
+	line-height: 2;
+	color: #4a4a4a;
+}
+
+.c-anchor-lineIn {
+	background-repeat: no-repeat;
+	transition: background-size 380ms cubic-bezier(.215, .61, .355, 1);
+	background-size: 0 1px;
+	background-position: 100% 100%;
+}
+
+a.is-hover:hover .c-anchor-lineIn {
+	background-size: 100% 1px;
+	background-position: 0 100%;
+}
+.card_figure_content>img{
+	width: 100%;
+	transition: all 0.3s;
+}
+.card_figure_content > img:hover{
+	transform: scale(1.01);
+}
+/* footer */
+.footercontent::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: -130px;
+	right: 0px;
+	background-image: url("https://dl.hk.edu.tw/hkweb/page/images/人-1.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 250px;
+	height: 218px;
+}
+
+.footer {
+	padding: 45px 0px;
+}
+
+.footerlogo>img {
+	width: 100%;
+}
+
+.footertext>p {
+	color: #fff;
+	font-size: 20px;
+}
+
+.footertext>p>span {
+	padding: 10px 20px;
+}
+
+/* 平板 */
+@media (max-width: 991px) {
+
+	.navbar .logo {
+		margin-left: 18px;
+		margin-bottom: 28px;
+	}
+
+	.togglelist {
+		display: inline-block;
+	}
+
+	.fa-caret-down::after {
+		content: "";
+	}
+
+	.fa-caret-down::before {
+		content: "";
+	}
+
+	/* 選單 */
+	.menu {
+		float: none;
+		display: inline-block;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		height: 100%;
+		width: 100%;
+		background-color: #141414;
+		margin-left: 0px;
+		overflow-y: hidden;
+		transform: translate(-0px, -100%);
+		box-shadow: 1px 1px 6px #949494;
+	}
+
+
+	::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
+
+
+	.menunavbaroverflow {
+		transition-duration: 300ms;
+		transform: translate(0px, 0px);
+	}
+
+	.bodyoverflow {
+		transition-duration: 200ms;
+	}
+
+	.menuhearder {
+		display: inline-block;
+		background-color: #141414;
+		padding: 15px;
+	}
+
+	.menuhearder img {
+		width: 100%;
+		height: 60px;
+		padding: 0px;
+	}
+
+	.menu>li {
+		float: none;
+
+	}
+	.menu>li:nth-child(2){
+		margin-top: 50px;
+	}
+	.menu>li>a {
+		line-height: 20px;
+		color: rgb(255, 255, 255);
+		display: inline-block;
+		padding: 20px 30px;
+		letter-spacing: 8px;
+    	font-size: 1.2rem;
+	}
+
+	.menu>li>a:hover {
+		text-decoration: none;
+		color: rgb(255, 255, 255);
+	}
+
+	.menu .dropdown {
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+		background-color: #5452d6;
+	}
+
+	.menu .dropdown>li>a {
+		line-height: 12px;
+		color: rgb(255, 255, 255);
+		display: inline-block;
+		padding: 20px 30px;
+		letter-spacing: 1px;
+		font-size: 1.7rem;
+		border-bottom: none;
+	}
+
+	.menu .dropdown>li>a:hover {
+		background-color: #5452d6;
+	}
+
+	.menu .btn-submenu {
+		display: inline-block;
+		color: white;
+		padding: 0 10px;
+		font-size: 22px;
+		transition-duration: 300ms;
+		cursor: pointer;
+	}
+
+	/* 第三層 */
+	.menu ul li>ul {
+		position: relative;
+		left: 0 !important;
+		top: 0 !important;
+		transform: translateX(0%) !important;
+		background-color: #5452d6;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transition: all 0.3s;
+	}
+
+	.menu ul li:hover>ul {
+		position: relative;
+		left: 0px !important;
+		top: 0px !important;
+		transform: translateX(0%);
+		background-color: #5452d6;
+		transition: all 0.3s;
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
+
+	.title{
+		font-size: 2.55rem;
+		padding-top: 10%;
+	}
+	.titleh1>h2::after{
+		bottom: -21px;
+    	right: 30%;	
+	}
+	.content_p::after{
+		right: 0px;
+		width: 150px;
+		height: 15%;
+	}
+	.content_p::before{
+		left: 0px;
+		width: 164px;
+		height: 17%;
+	}
+	.title1_tw_Food::after{
+		width: 80%;
+	}
+	.Food_content_img{
+		margin:0px;
+	}
+	.c-card__figure>img{
+		margin:0px;
+		width:90%;
+	}
+	.card_figure_content>img{
+		width: 100%;
+	}
+}
+
+
+
+/* 手機板 */
+@media (max-width: 767px) {
+	
+	.navbar .logo {
+		height: 60px;
+		margin-top: 10px;
+		margin-left: 0px;
+		margin-bottom: 8px;
+	}
+
+	.cloud {
+		position: absolute;
+		top: 0px;
+		width: 20.53333%;
+		height: 100px;
+	}
+	.section1{
+		margin-bottom: 4.3rem;
+	}
+	.top_cloud_2>img, .top_cloud_1>img {
+		width: 100%;
+		height: 8.2rem;
+	}
+
+	/* section1 */
+	.titleh1{
+		margin-bottom: 6rem;
+	}
+	.about_button{
+		padding: 10px 0;
+		font-size: 0.9rem;
+	}
+	.content_buttom{
+		max-width: 10rem;
+	}
+	.titleh1>h2{
+		font-size: calc(1.025rem + .9vw);
+	}
+	.title {
+		letter-spacing: 6px;
+		font-size: 1.75rem;
+		line-height: 45px;
+		padding-top: 15%;
+	}
+	.title::before{
+		display: none;
+	}
+	.titleh1::after{
+		display: none;
+	}
+	.titleh1>h2::after{
+		display: none;
+	}
+	.title::after{
+		display: none;
+	}
+	.titleh1>h2::before{
+		display: none;
+	}
+	.titleh1::before{
+		display: none;
+	}
+	.content_p::before{
+		left: -30px;
+		width: 100px;
+		height: 10%;
+	}
+	.content_p::after{
+		top: 30%;
+		right: 0px;
+		width: 80px;
+		height: 25px;
+	}
+	.xiaoyun{
+		width: 83px;
+		height: 22px;
+		margin: -20px 1%;
+	}
+	.section2{
+		margin-bottom: 80px;
+    	padding: 0.5rem 0px 6.5rem 0px;
+	}
+	.content_hr{
+		margin: 1rem auto;
+	}
+	.content_p{
+		line-height: 2.1rem;
+	}
+	.content_h3>h3{
+		font-size: calc(1.1rem + .6vw);
+	}
+	.c_title_en{
+		letter-spacing: 2px;
+    	font-size: 2.2rem;	
+	}
+	.title1_tw{
+		font-size: 1.1rem;
+	}
+	.title1_tw::after{
+		width: 3rem;
+	}
+	.title1_tw_left::before{
+		width: 3rem;
+	}
+	.title1_tw{
+		letter-spacing: 0.1em;
+	}
+	.prevwrapper,.nextwrapper{
+		top: 40px;
+		padding: 9px 10px;
+	}
+	.prevwrapper{
+		right: 80px;
+	}
+	.nextwrapper{
+		right: 20px;
+	}
+	.next,.prev{
+		top: 40px;
+		padding: 9px 10px;
+	}
+	.next{
+		left: 70px;
+	}
+	.title1_tw_left{
+		letter-spacing: 0;
+		font-size: 1.1rem;
+	}
+	.c-card__figure>img{
+		margin: 0 auto;
+	}
+	.c-card__time{
+		text-align: center;
+	}
+	.c-card__title{
+		text-align: center;
+		font-size: 0.95rem;
+	}
+	.section2::before{
+		width: 230px;
+		height: 75px;
+	}
+	.title1_tw_Food::before{
+		top: -50px;
+		right: 10px;
+		width: 150px;
+		height: 60px;
+	}
+	.title1_tw_Food::after{
+		width: 75%;
+	}
+	.Food_content_img{
+		margin: 10px 30px;
+	}
+	.card_title{
+		text-align: center;
+	}
+	.c-card__figure{
+		margin-bottom:0.9rem;
+	}
+	.card_content{
+		margin-bottom: 2.5rem;
+	}
+	.footercontent::before{
+		width: 150px;
+		height: 125px;
+		top: -80px;
+	}
+	.footerlogo>img{
+		width: 50%;
+		margin: 35px auto;
+		display: block;
+	}
+	.footertext>p{
+		text-align: center;
+		font-size: 1.1rem;
+	}
+	.footertext>p>span{
+		padding: 0px 10px;
+	}
+	.section4{
+		margin-bottom: 100px;
+	}
+	.card_figure_content>img{
+		width: 100%;
+	}
+
+}
+
+
+/* about */
+.about-class>img{
+	width: 100%;
+}
+.about_section1::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 105px;
+    width: 220px;
+    left: -4%;
+    height: 60px;
+	opacity: 0.3;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/未命名-1工作區域-2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.about_section1::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+    width: 220px;
+    right: -4%;
+    height: 60px;
+	opacity: 0.5;
+	background-image: url('https://dl.hk.edu.tw/hkweb/page/images/未命名-1工作區域-2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.banner h1{
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 65px;
+    letter-spacing: 25px;
+    color: #fff;
+    text-shadow: 2px 9px 8px #545454;
+}
+.about_section1{
+	padding: 30px 0;
+	position: relative;
+	overflow: hidden;
+}
+.about_h2_title {
+	text-align: center;
+	margin: 50px 0px 10px 0;
+	font-size: 40px;
+	letter-spacing: 10px;
+}
+.about_content{
+	padding: 60px 0 120px 0;
+    text-align: center;
+    line-height: 55px;
+    font-size: 1.3rem;
+    letter-spacing: 10px;
+    color: #525252;
+}
+.about_title_color{
+	color: #f1a993;
+}
+.about_title_color:nth-child(2){
+	margin-left: 50px;
+}
+.about_bg::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 100%;
+	height: 385px;
+	background-image: url('../images/about_bg.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.about_section2{
+	padding: 30px 0px;
+	position: relative;
+	overflow: hidden;
+}
+.about_h3{
+	text-align: center;
+	position: relative;
+	color: rgb(129, 129, 129);
+	padding: 15px;
+}
+.about_h3::after{
+	content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 32%;
+    width: 12%;
+    height: 1px;
+    background-color: #d5d5d5;
+}
+.about_h3::before{
+	content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    width: 12%;
+    height: 1px;
+    background-color: #d5d5d5;
+}
+.team_title{
+	font-size: 1.25rem;
+}
+.contetn_team{
+	font-size: 1.25rem;
+	color: rgb(129, 129, 129);
+}
+.section_cloud1 {
+	display: inline-block;
+	position: absolute;
+	top: 20%;
+    width: 260px;
+    left: -5%;
+    height: 70px;
+	opacity: 0.6;
+	background-image: url('../images/未命名-1工作區域-2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: all 0.2s;
+}
+
+.section_cloud2 {
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+    width: 220px;
+    right: 20%;
+    height: 60px;
+	opacity: 0.5;
+	background-image: url('../images/未命名-1工作區域-2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: all 0.2s;
+}
+.section_cloud3 {
+	display: inline-block;
+	position: absolute;
+	top: 25%;
+    width: 260px;
+    right: -5%;
+    height: 70px;
+	opacity: 0.6;
+	background-image: url('../images/未命名-1工作區域-2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: all 0.2s;
+}
