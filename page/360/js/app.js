@@ -155,85 +155,86 @@ function update() {
 
 }
 
-async function changeScene(area, site) {
-    localData = await getLocalData();
-    document.querySelector(".buttonGroup").innerHTML = "";
-    areaList = localData.map((e) => {
-        if (e.name == area) {
-            document.querySelector(".buttonGroup").innerHTML += '<div class="button act" onclick="changeScene(\'' + e.name + '\',null)">' + e.name + '</div>';
-        } else if (area == null && e.name == localData[0].name) {
-            document.querySelector(".buttonGroup").innerHTML += '<div class="button act" onclick="changeScene(\'' + e.name + '\',null)">' + e.name + '</div>';
-        } else {
-            document.querySelector(".buttonGroup").innerHTML += '<div class="button" onclick="changeScene(\'' + e.name + '\',null)">' + e.name + '</div>';
-        }
+function changeScene(area, site) {
+    getLocalData().then(localData => {
+        document.querySelector(".buttonGroup").innerHTML = "";
+        areaList = localData.map((e) => {
+            if (e.name == area) {
+                document.querySelector(".buttonGroup").innerHTML += '<div class="button act" onclick="changeScene(\'' + e.name + '\',null)">' + e.name + '</div>';
+            } else if (area == '' && e.name == localData[0].name) {
+                document.querySelector(".buttonGroup").innerHTML += '<div class="button act" onclick="changeScene(\'' + e.name + '\',null)">' + e.name + '</div>';
+            } else {
+                document.querySelector(".buttonGroup").innerHTML += '<div class="button" onclick="changeScene(\'' + e.name + '\',null)">' + e.name + '</div>';
+            }
 
-        return e.name;
-    });
-
-    //
-    let setAreData = {};
-    if (area == null) {
-        setAreData = localData.filter(e => e.name == localData[0].name);
-    } else {
-        setAreData = localData.filter(e => e.name == area);
-        if (setAreData.length == 0) {
+            return e.name;
+        });
+        //
+        let setAreData = {};
+        if (area == '') {
             setAreData = localData.filter(e => e.name == localData[0].name);
+        } else {
+            setAreData = localData.filter(e => e.name == area);
+            if (setAreData.length == 0) {
+                setAreData = localData.filter(e => e.name == localData[0].name);
+            }
         }
-    }
-    siteList = setAreData[0].imgs.map(e => e.name);
-    if (site == null) {
-        setAreData[0].imgs = [setAreData[0].imgs[0]];
-    } else {
-        let oldData = JSON.parse(JSON.stringify(setAreData[0].imgs));
-        setAreData[0].imgs = setAreData[0].imgs.filter(e => e.name == site);
-        if (setAreData[0].imgs.length == 0) {
-            setAreData[0].imgs = oldData;
+        siteList = setAreData[0].imgs.map(e => e.name);
+        if (site == '') {
+            setAreData[0].imgs = [setAreData[0].imgs[0]];
+        } else {
+            let oldData = JSON.parse(JSON.stringify(setAreData[0].imgs));
+            setAreData[0].imgs = setAreData[0].imgs.filter(e => e.name == site);
+            if (setAreData[0].imgs.length == 0) {
+                setAreData[0].imgs = oldData;
+            }
         }
-    }
-    document.querySelector("#title").innerHTML = setAreData[0].name;
-    document.querySelector("#title2").innerHTML = setAreData[0].imgs[0].name;
-    setInfo.img = {};
-    setInfo.logo = {};
-    setInfo.lookAt = {};
-    setInfo.areaName = setAreData[0].name;
-    setInfo.siteName = setAreData[0].imgs[0].name;
-    setInfo.img.path = setAreData[0].imgs[0].path;
-    setInfo.logo.path = setAreData[0].imgs[0].logo.path
-    setInfo.logo.rotation = setAreData[0].imgs[0].logo.rotation;
-    setInfo.lookAt.lat = setAreData[0].imgs[0].lookAt.lat;
-    setInfo.lookAt.lon = setAreData[0].imgs[0].lookAt.lon;
-    if (scene.children.length > 0) {
-        scene.children = [];
-    }
-    //
-    const geometry = new THREE.SphereGeometry(500, 60, 40);
-    geometry.scale(-1, 1, 1);
+        document.querySelector("#title").innerHTML = setAreData[0].name;
+        document.querySelector("#title2").innerHTML = setAreData[0].imgs[0].name;
+        document.querySelector(".arrowGroup>p.text").innerHTML = (siteList.indexOf(setAreData[0].imgs[0].name)+1) + "/" + siteList.length;
+        setInfo.img = {};
+        setInfo.logo = {};
+        setInfo.lookAt = {};
+        setInfo.areaName = setAreData[0].name;
+        setInfo.siteName = setAreData[0].imgs[0].name;
+        setInfo.img.path = setAreData[0].imgs[0].path;
+        setInfo.logo.path = setAreData[0].imgs[0].logo.path
+        setInfo.logo.rotation = setAreData[0].imgs[0].logo.rotation;
+        setInfo.lookAt.lat = setAreData[0].imgs[0].lookAt.lat;
+        setInfo.lookAt.lon = setAreData[0].imgs[0].lookAt.lon;
 
-    const texture = new THREE.TextureLoader().load(setInfo.img.path);
-    const material = new THREE.MeshBasicMaterial({
-        map: texture
+        if (scene.children.length > 0) {
+            scene.children = [];
+        }
+        //
+        const geometry = new THREE.SphereGeometry(500, 60, 40);
+        geometry.scale(-1, 1, 1);
+
+        const texture = new THREE.TextureLoader().load(setInfo.img.path);
+        const material = new THREE.MeshBasicMaterial({
+            map: texture
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        const logoImg = new THREE.ImageUtils.loadTexture(setInfo.logo.path);
+        const logoMaterial = new THREE.MeshBasicMaterial({
+            map: logoImg
+        });
+        const bg = new THREE.MeshBasicMaterial({
+            color: 'red'
+        })
+        const Logo = new THREE.Mesh(new THREE.CylinderGeometry(250, 250, 1, 40, 40), [bg, logoMaterial, bg]);
+        Logo.overdraw = true;
+        Logo.name = 'Logo';
+        Logo.position.y = -400;
+        Logo.rotation.set(0, setInfo.logo.rotation, 0);
+        scene.add(Logo)
+
+        lat = setInfo.lookAt.lat;
+        lon = setInfo.lookAt.lon;
     });
-
-    const mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
-
-
-    const logoImg = new THREE.ImageUtils.loadTexture(setInfo.logo.path);
-    const logoMaterial = new THREE.MeshBasicMaterial({
-        map: logoImg
-    });
-    const bg = new THREE.MeshBasicMaterial({
-        color: 'red'
-    })
-    const Logo = new THREE.Mesh(new THREE.CylinderGeometry(250, 250, 1, 40, 40), [bg, logoMaterial, bg]);
-    Logo.overdraw = true;
-    Logo.name = 'Logo';
-    Logo.position.y = -400;
-    Logo.rotation.set(0, setInfo.logo.rotation, 0);
-    scene.add(Logo)
-
-    lat = setInfo.lookAt.lat;
-    lon = setInfo.lookAt.lon;
 }
 
 function getLocalData() {

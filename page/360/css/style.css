@@ -5,8 +5,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  /* background-color: #aaa; */
-  font-family: "Oswald", "微軟正黑體", sans-serif;
+  font-family: "Oswald", sans-serif;
   overflow: hidden;
 }
 
@@ -139,8 +138,13 @@ canvas {
   width: 200px;
   height: 60px;
   transform: translateX(-50%);
+  text-align: center;
 }
-
+.arrowGroup>p{
+  font-size: 24px;
+  margin: 5px;
+  color: #393533;
+}
 svg#arrowRight,
 svg#arrowLeft {
   display: inline-block;
