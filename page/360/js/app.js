@@ -11,7 +11,9 @@ let onPointerDownMouseX = 0,
     setInfo = {},
     localData = [],
     areaList = [],
+    siteList = [],
     area = "";
+site = "";
 init();
 
 function init() {
@@ -22,8 +24,9 @@ function init() {
     scene = new THREE.Scene();
 
 
-
-    changeScene();
+    area = getQueryString("area");
+    site = getQueryString("site");
+    changeScene(area, site);
 
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -152,11 +155,21 @@ function update() {
 
 }
 
-async function changeScene() {
+async function changeScene(area, site) {
     localData = await getLocalData();
-    areaList = localData.map(e => e.name);
-    area = getQueryString("area");
-    site = getQueryString("site");
+    document.querySelector(".buttonGroup").innerHTML = "";
+    areaList = localData.map((e) => {
+        if (e.name == area) {
+            document.querySelector(".buttonGroup").innerHTML += '<div class="button act" onclick="changeScene(\'' + e.name + '\',null)">' + e.name + '</div>';
+        } else if (area == null && e.name == localData[0].name) {
+            document.querySelector(".buttonGroup").innerHTML += '<div class="button act" onclick="changeScene(\'' + e.name + '\',null)">' + e.name + '</div>';
+        } else {
+            document.querySelector(".buttonGroup").innerHTML += '<div class="button" onclick="changeScene(\'' + e.name + '\',null)">' + e.name + '</div>';
+        }
+
+        return e.name;
+    });
+
     //
     let setAreData = {};
     if (area == null) {
@@ -167,8 +180,9 @@ async function changeScene() {
             setAreData = localData.filter(e => e.name == localData[0].name);
         }
     }
+    siteList = setAreData[0].imgs.map(e => e.name);
     if (site == null) {
-        setAreData[0].imgs = [setAreData.imgs[0]];
+        setAreData[0].imgs = [setAreData[0].imgs[0]];
     } else {
         let oldData = JSON.parse(JSON.stringify(setAreData[0].imgs));
         setAreData[0].imgs = setAreData[0].imgs.filter(e => e.name == site);
@@ -181,6 +195,8 @@ async function changeScene() {
     setInfo.img = {};
     setInfo.logo = {};
     setInfo.lookAt = {};
+    setInfo.areaName = setAreData[0].name;
+    setInfo.siteName = setAreData[0].imgs[0].name;
     setInfo.img.path = setAreData[0].imgs[0].path;
     setInfo.logo.path = setAreData[0].imgs[0].logo.path
     setInfo.logo.rotation = setAreData[0].imgs[0].logo.rotation;
@@ -233,3 +249,14 @@ function getQueryString(item) {
     var results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
+
+function nextScene(num) {
+    let index = siteList.indexOf(setInfo.siteName);
+    index += num;
+    if (index < 0) {
+        index = siteList.length - 1;
+    } else if (index == siteList.length) {
+        index = 0;
+    }
+    changeScene(setInfo.areaName, siteList[index]);
+}
