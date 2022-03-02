@@ -56,8 +56,16 @@
 			</g>
 		</svg>
 	</div>
-	<script src="./js/three.min.js"></script>
-	<script src="./js/app.js"></script>
+	<script src="./js/es-module-shims.js"></script>
+
+	<script type="importmap">
+			{
+				"imports": {
+					"three": "./js/three.module.js"
+				}
+			}
+		</script>
+	<script src="./js/app.js" type="module"></script>
 </body>
 
 </html>

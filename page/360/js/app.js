@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 let camera, scene, renderer, light;
 
 let onPointerDownMouseX = 0,
@@ -12,8 +13,8 @@ let onPointerDownMouseX = 0,
     localData = [],
     areaList = [],
     siteList = [],
-    area = "";
-site = "";
+    area = "",
+    site = "";
 init();
 
 function init() {

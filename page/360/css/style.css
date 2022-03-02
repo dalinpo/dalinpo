@@ -9,10 +9,6 @@ body {
   overflow: hidden;
 }
 
-canvas {
-  mix-blend-mode: screen;
-}
-
 #texts {
   color: #ebe3e0;
   position: absolute;
