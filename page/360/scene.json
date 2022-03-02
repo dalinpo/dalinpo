@@ -1,0 +1,669 @@
+[
+    {
+        "name": "國立高雄餐旅大學",
+        "imgs": [
+            {
+                "name": "高餐校門口1",
+                "path": "./img/01.高餐校門口1.jpg",
+                "lookAt": {
+                    "lat": -2.8,
+                    "lon": 200
+                },
+                "logo": {
+                    "rotation": -490,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "高餐校門口2",
+                "path": "./img/01.高餐校門口2.jpg",
+                "lookAt": {
+                    "lat": -2.8,
+                    "lon": 200
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "name": "姓洪古井",
+        "imgs": [
+            {
+                "name": "古井石磚屋",
+                "path": "./img/古井.石磚屋1.jpg",
+                "lookAt": {
+                    "lat": -3.6,
+                    "lon": 186.72
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳興路70號",
+                "path": "./img/古井.鳳興路70號.jpg",
+                "lookAt": {
+                    "lat": -25.8,
+                    "lon": 171.3
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "name": "紅毛港文化園區",
+        "imgs": [
+            {
+                "name": "高雄市小港區南星路2808號",
+                "path": "./img/紅毛港文化園區.高雄市小港區南星路2808號.jpg",
+                "lookAt": {
+                    "lat": -3.6,
+                    "lon": 186.72
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "name": "破港處",
+        "imgs": [
+            {
+                "name": "破港處1",
+                "path": "./img/破港處1.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "破港處2",
+                "path": "./img/破港處2.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "name": "鳳林國小與國中",
+        "imgs": [
+            {
+                "name": "鳳林國小門口",
+                "path": "./img/鳳林國小門口.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林國小正門內",
+                "path": "./img/鳳林國小正門內.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林國小屋頂中間",
+                "path": "./img/鳳林國小屋頂中間.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林國小屋頂右中",
+                "path": "./img/鳳林國小屋頂右中.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林國小屋頂右前",
+                "path": "./img/鳳林國小屋頂右前.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林國小屋頂左",
+                "path": "./img/鳳林國小屋頂左.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林國小屋頂左前",
+                "path": "./img/鳳林國小屋頂左前.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林國小屋頂後",
+                "path": "./img/鳳林國小屋頂後.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林國中校門口1",
+                "path": "./img/鳳林國中校門口1.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林國中校門口2",
+                "path": "./img/鳳林國中校門口2.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "name": "鳳林宮",
+        "imgs": [
+            {
+                "name": "鳳林宮",
+                "path": "./img/鳳林宮.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林宮內部2",
+                "path": "./img/鳳林宮內部2.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林宮街景1",
+                "path": "./img/鳳林宮街景1.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林宮街景2",
+                "path": "./img/鳳林宮街景2.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "name": "鳳林路",
+        "imgs": [
+            {
+                "name": "鳳林路-打鐵店1",
+                "path": "./img/鳳林路-01.打鐵店1.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林路-打鐵店2",
+                "path": "./img/鳳林路-02.打鐵店2.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林路-大林蒲教會1",
+                "path": "./img/鳳林路-03.大林蒲教會1.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林路-藝術感理髮廳1",
+                "path": "./img/鳳林路-04.很有藝術感的理髮廳1.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林路-藝術感理髮廳2",
+                "path": "./img/鳳林路-04.很有藝術感的理髮廳2.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林路-很有藝術感的理髮廳3",
+                "path": "./img/鳳林路-04.很有藝術感的理髮廳4.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林路-全家1",
+                "path": "./img/鳳林路-05.全家1.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳林路-全家2",
+                "path": "./img/鳳林路-05.全家2.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "name": "鳳西街",
+        "imgs": [
+            {
+                "name": "鳳西街01",
+                "path": "./img/鳳西街-03.7-11.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳西街-紅毛港立碑1",
+                "path": "./img/鳳西街-04.紅毛港立碑1.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳西街-紅毛港立碑2",
+                "path": "./img/鳳西街-04.紅毛港立碑2.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳西街-紅毛港立碑3",
+                "path": "./img/鳳西街-04.紅毛港立碑3.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳西街-紅毛港立碑4",
+                "path": "./img/鳳西街-04.紅毛港立碑4.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳西街-紅毛港立碑5",
+                "path": "./img/鳳西街-04.紅毛港立碑5.jpg",
+                "lookAt": {
+                    "lat": 17.28,
+                    "lon": 173
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "name": "街景",
+        "imgs": [
+            {
+                "name": "街景1",
+                "path": "./img/街景1.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "街景2",
+                "path": "./img/街景2.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "街景3",
+                "path": "./img/街景3.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "name": "鳳鼻頭漁港",
+        "imgs": [
+            {
+                "name": "鳳鼻頭漁港1",
+                "path": "./img/鳳鼻頭漁港1.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳鼻頭漁港2",
+                "path": "./img/鳳鼻頭漁港2.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "鳳鼻頭漁港3",
+                "path": "./img/鳳鼻頭漁港3.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "name": "工業區",
+        "imgs": [
+            {
+                "name": "台灣水泥",
+                "path": "./img/02.台灣水泥.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "橡膠工廠",
+                "path": "./img/03.橡膠工廠.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "中國石油1",
+                "path": "./img/09.中油1.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "中國石油2",
+                "path": "./img/09.中油2.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "中國石油3",
+                "path": "./img/09.中油3.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "工廠1",
+                "path": "./img/06.工廠2.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "工廠2",
+                "path": "./img/07.工廠1.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "中鋼",
+                "path": "./img/08.中鋼1.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "街景-(左)大林蒲-(右)台電1",
+                "path": "./img/10.左邊大林蒲右邊台電1.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            },
+            {
+                "name": "街景-(左)大林蒲-(右)台電2",
+                "path": "./img/10.左邊大林蒲右邊台電2.jpg",
+                "lookAt": {
+                    "lat": 5,
+                    "lon": 258.5
+                },
+                "logo": {
+                    "rotation": -500,
+                    "path": "./img/logo.jpg"
+                }
+            }
+        ]
+    }
+]
