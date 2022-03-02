@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 let camera, scene, renderer, light;
 
 let onPointerDownMouseX = 0,
