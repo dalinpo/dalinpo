@@ -13,7 +13,8 @@ let onPointerDownMouseX = 0,
     areaList = [],
     siteList = [],
     area = "",
-    site = "";
+    site = "",
+    start = {};
 init();
 
 function init() {
@@ -75,8 +76,13 @@ function init() {
         document.body.style.opacity = 1;
 
     });
-
+    document.addEventListener('touchstart', onDocumentTouchStart);
+    document.addEventListener('touchmove', onDocumentTouchMove);
+    document.addEventListener('touchend', onDocumentTouchEnd);
+    document.addEventListener('touchcancel', onDocumentTouchEnd);
     window.addEventListener('resize', onWindowResize);
+
+
 
     animate();
 
@@ -125,13 +131,79 @@ function onPointerUp() {
 }
 
 function onDocumentMouseWheel(event) {
-
     const fov = camera.fov + event.deltaY * 0.05;
 
     camera.fov = THREE.Math.clamp(fov, 10, 75);
 
     camera.updateProjectionMatrix();
 
+}
+
+function onDocumentTouchStart(event) {
+    var touches = event.touches;
+    var events = touches[0];
+    var events2 = touches[1];
+
+    event.preventDefault();
+
+    start.pageX = events.pageX;
+    start.pageY = events.pageY;
+
+    start.moveable = true;
+
+    if (events2) {
+        start.pageX2 = events2.pageX;
+        start.pageY2 = events2.pageY;
+    }
+
+    start.originScale = start.scale || 1;
+}
+
+function onDocumentTouchMove(event) {
+    if (!start.moveable) {
+        return;
+    }
+
+    let touches = event.touches;
+    let events = touches[0];
+    let events2 = touches[1];
+    if (events2) {
+        if (!start.pageX2) {
+            start.pageX2 = events2.pageX;
+        }
+        if (!start.pageY2) {
+            start.pageY2 = events2.pageY;
+        }
+        let distanceA = getDistance({
+            x: events.pageX,
+            y: events.pageY
+        }, {
+            x: events2.pageX,
+            y: events2.pageY
+        })
+        let distanceB = getDistance({
+            x: start.pageX,
+            y: start.pageY
+        }, {
+            x: start.pageX2,
+            y: start.pageY2
+        })
+        let delta = distanceA / distanceB;
+        let zoom = 1;
+        if (delta > 1) {
+            zoom = -1
+        }
+        const fov = camera.fov + zoom * 1;
+
+        camera.fov = THREE.Math.clamp(fov, 10, 75);
+
+        camera.updateProjectionMatrix();
+    }
+}
+
+function onDocumentTouchEnd() {
+    start.move = false;
+    start = {}
 }
 
 function animate() {
@@ -191,7 +263,7 @@ function changeScene(area, site) {
         }
         document.querySelector("#title").innerHTML = setAreData[0].name;
         document.querySelector("#title2").innerHTML = setAreData[0].imgs[0].name;
-        document.querySelector(".arrowGroup>p.text").innerHTML = (siteList.indexOf(setAreData[0].imgs[0].name)+1) + "/" + siteList.length;
+        document.querySelector(".arrowGroup>p.text").innerHTML = (siteList.indexOf(setAreData[0].imgs[0].name) + 1) + "/" + siteList.length;
         setInfo.img = {};
         setInfo.logo = {};
         setInfo.lookAt = {};
@@ -261,3 +333,7 @@ function nextScene(num) {
     }
     changeScene(setInfo.areaName, siteList[index]);
 }
+
+function getDistance(pointA, pointB) {
+    return Math.hypot(pointB.x - pointA.x, pointB.y - pointA.y);
+};
