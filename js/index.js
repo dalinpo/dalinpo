@@ -1,6 +1,20 @@
 $(document).ready(function () {
+    // 載入組件
+    let headermenu = $('#header_meun');
+    let footer = $('#footer');
+    axios.get('./components/header_meun.html').then(function (res) {
+        headermenu.html(res.data)
+        togglelist();
+    })
+    axios.get('./components/footer.html').then(function (res) {
+        footer.html(res.data)
+        footerscroll();
+        
+    });
+
     function togglelist() {
         $('.menubar').click(function () {
+            
             $(this).toggleClass('open');
             $('body').toggleClass('body-overflow');
             $('.menu').toggleClass('menunavbaroverflow');
@@ -12,7 +26,6 @@ $(document).ready(function () {
             }
         });
     }
-    togglelist();
 
     function windowsize() {
         if ($(window).width() < 991) {
@@ -114,15 +127,7 @@ $(document).ready(function () {
             }
         ]
     });
-    // 載入組件
-    let headermenu = $('#header_meun');
-    let footer = $('#footer');
-    axios.get('./components/header_meun.html').then(function (res) {
-        headermenu.html(res.data)
-    })
-    axios.get('./components/footer.html').then(function (res) {
-        footer.html(res.data)
-    });
+
     // loading
     var percent = 0;
     var timer = setInterval(function () {
@@ -166,6 +171,9 @@ tl.from(".top_cloud_1", { x: -200, opacity: 0  })
     .from(".top_cloud_2", { x: 200, opacity: 0}, "-=0.5")
     .from(".titleh1", { y: 200, opacity: 0})
     .from(".content_h3", { y: 200, opacity: 0})
+    .from(".cloud_content_p1",{x: -200, opacity: 0})
+    .from(".cloud_content_p2",{x: 200, opacity: 0}, "-=0.5")
+    .from(".cloud_content_p3",{x: -200, opacity: 0})
 
 let t2 = gsap.timeline({
     ease:Circ.easeOut,
@@ -214,13 +222,14 @@ t5.from(".c_title_en4", { x: -100, opacity: 0})
 
 
 
+
+
 gsap.registerPlugin(ScrollTrigger);
 let start = { val: 0 };
 gsap.utils.toArray('.about_number').forEach( (label) => {
     start.val = 0;
     gsap.to( start, {
     duration: 3,
-
     scrollTrigger: {
         trigger: label,
         toggleActions: "play none none none",
@@ -255,6 +264,29 @@ t7.from(".about_section2_title", { y: 100, opacity: 0, duration: 0.5 })
     .from(".about_h3", { y: 100, opacity: 0, duration: 0.5 })
     .from(".scroll_out_team", { y: 100, opacity: 0, duration: 0.5 })
 
+let ferry = gsap.timeline({
+    scrollTrigger:{
+        trigger: '.section2',
+        start: "top center",
+        end: "+=1200",
+        scrub: true,
+    }
+})
+ferry.from(".ferry",{ x: 1500, opacity: 0})
+
+function footerscroll(){
+    let footer = gsap.timeline({
+        ease: Back.inOut,
+        scrollTrigger: {
+            trigger: '.footercontent',
+            start: "-=500 center",
+            end: "+=300",
+            scrub: true,
+        }
+    })
+    footer.from(".footer_cloud", { x: -200, opacity: 0}, "-=0.5")
+    .from(".footer_people", { y: 200, opacity: 0})
+}
 
 
 

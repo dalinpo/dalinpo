@@ -151,6 +151,7 @@ ul.transtiton li{
 	width: 30px;
 	height: 30px;
 	position: relative;
+
 }
 
 .menubar span {
@@ -523,8 +524,7 @@ ul.transtiton li{
 	background-repeat: no-repeat;
 }
 
-.section2::before {
-	content: "";
+.ferry {
 	display: inline-block;
 	position: absolute;
 	bottom: 0px;
@@ -816,8 +816,11 @@ a.is-hover:hover .c-anchor-lineIn {
 	transform: scale(1.01);
 }
 /* footer */
-.footercontent::before {
-	content: "";
+.footercontent{
+	position: relative;
+}
+
+.footer_people{
 	display: inline-block;
 	position: absolute;
 	top: -130px;
@@ -828,9 +831,9 @@ a.is-hover:hover .c-anchor-lineIn {
 	width: 250px;
 	height: 218px;
 }
-.footercontent::after{
-	content: "";
-    display: inline-block;
+
+.footer_cloud{
+	display: inline-block;
     position: absolute;
     top: -180px;
     transform: rotate(270deg);
@@ -1233,7 +1236,41 @@ a.is-hover:hover .c-anchor-lineIn {
 	.card_figure_content>img{
 		width: 100%;
 	}
-
+	.cloud_content_p1{
+		z-index: -1;
+		opacity: 0.25;
+		left: -20px;
+		width: 180px;
+		height: 10%;
+	}
+	.cloud_content_p2{
+		z-index: -1;
+		opacity: 0.5;
+		right: 0px;
+		width: 100px;
+		height: 8%;
+	}
+	.cloud_content_p3{
+		width: 25%;
+		height: 6%;
+		z-index: -1;
+		opacity: 0.5;
+		left: 0px;
+	}
+	.footer_cloud{
+		left: 0%;
+		width: 100px;
+		height: 100px;
+		top: -90px;
+		z-index: -1;
+	}
+	.footer_people{
+		top: -85px;
+		right: 0px;
+		background-size: 100% 100%;
+		width: 160px;
+		height: 140px;
+	}
 }
 @media (max-width: 767px) and (min-width: 567px){
 	.footercontent::after{
@@ -1405,14 +1442,26 @@ a.is-hover:hover .c-anchor-lineIn {
 .about_dalinpo1{
 	padding: 30px 0px;
 	position: relative;
+	overflow: hidden;
 }
 .about_dalinpo_title{
 	padding-bottom: 30px;
 	position: relative;
 }
 .about_dalinpo_content{
-	font-size: 1.2rem;
-	line-height: 2.2rem;
+	font-size: 1.3rem;
+	line-height: 2.5rem;
+	letter-spacing: 8px;
+	
+}
+.about_dalinpo2{
+	margin: 30px 0px 0px 0px;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 200px;
+}
+.about_dalinpo_img{
+	width: 100%;
 }
 .about_dalinpo_title::before{
 	content: "";
@@ -1425,8 +1474,71 @@ a.is-hover:hover .c-anchor-lineIn {
 	background-image: url('../images/未命名-1工作區域-6.png');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
+
 }
 .about_dalinpo_cloud{
 	position: absolute;
+	background-repeat: no-repeat;
+	display: inline-block;
+	background-size: 100% 100%;
+}
+.about_dalinpo_cloud1{
+	background-image: url("../images/未命名-1工作區域-2.png");
+	bottom: 20px;
+	right: 20%;
+	width: 250px;
+    height: 70px;
+}
+.about_dalinpo_cloud2{
+	background-image: url("../images/小雲-3.png");
+	top: 20px;
+	right: -15%;
+    width: 320px;
+	height: 100px;
+}
+.about_dalinpo_cloud4{
+	background-image: url("../images/小雲-1.png");
+	bottom: 17%;
+    left: -45%;
+    z-index: -1;
+    width: 420px;
+    height: 140px;
+}
+.about_dalinpo_cloud5{
+	background-image: url("../images/小雲-1.png");
+	bottom: -40%;
+    right: -66%;
+    z-index: -1;
+    width: 340px;
+    height: 120px;
+}
+.about_dalinpo3{
+	margin: 200px 0px;
+	position: relative;
+
+}
+.dalinpo_footer_img{
+	background-image: url("../images/1646640393791.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	width: 100%;
+	height: 500px;
+}
+.about_dalinpo3_content{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: inline-block;
+	padding: 55px 20px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 15px;
 }
 
+.dalinpo_bottom{
+	text-align: center;
+	letter-spacing: 10px;
+	font-size: 20px;
+	line-height: 36px;
+}
