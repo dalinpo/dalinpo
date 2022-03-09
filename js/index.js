@@ -51,17 +51,17 @@ $(document).ready(function () {
     }
     hasclass();
 
-    $('.your-class').slick({
-        dots: false,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        autoplay: true,
-        autoplaySpeed: 2000,
-        adaptiveHeight: true,
-        appendArrows: false
-    });
+    // $('.your-class').slick({
+    //     dots: false,
+    //     infinite: true,
+    //     speed: 500,
+    //     fade: true,
+    //     cssEase: 'linear',
+    //     autoplay: true,
+    //     autoplaySpeed: 2000,
+    //     adaptiveHeight: true,
+    //     appendArrows: false
+    // });
 
     $('.responsive').slick({
         dots: false,
