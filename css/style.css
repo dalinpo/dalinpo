@@ -334,6 +334,7 @@ ul.transtiton li{
 }
 .banner>.your-class>img {
 	max-height: 80%;
+	width: 100%;
 }
 
 /* section1 */
