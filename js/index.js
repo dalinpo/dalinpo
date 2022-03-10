@@ -21,9 +21,7 @@ $(document).ready(function () {
             $('.togglelist').toggleClass('bodyoverflow');
             if ($('body').hasClass('body-overflow')) {
                 $('body').removeAttr("style");
-            } else {
-                $('body').css("overflow", "hidden");
-            }
+            } 
         });
     }
 
@@ -221,9 +219,6 @@ t5.from(".c_title_en4", { x: -100, opacity: 0})
     .from(".card_content", { y: 100, opacity: 0})
 
 
-
-
-
 gsap.registerPlugin(ScrollTrigger);
 let start = { val: 0 };
 gsap.utils.toArray('.about_number').forEach( (label) => {
@@ -288,10 +283,39 @@ function footerscroll(){
     .from(".footer_people", { y: 200, opacity: 0})
 }
 
+let aboutdalinpo1 = gsap.timeline({
+    ease: Back.inOut,
+    scrollTrigger: {
+        trigger: '.about_dalinpo1',
+        start: "top center",
+        end: "+=500",
+    }
+})
+aboutdalinpo1.from(".about_dalinpo_title", { x: -200, opacity: 0})
+.from(".about_dalinpo_content1", { x: -200, opacity: 0})
+.from(".about_dalinpo_cloud2", { x: 200, opacity: 0})
+.from(".about_dalinpo_cloud1", { x: 200, opacity: 0})
 
+let aboutdalinpo2 = gsap.timeline({
+    ease: Back.inOut,
+    scrollTrigger: {
+        trigger: '.about_dalinpo2',
+        start: "top center",
+        end: "+=500",
+        // markers: true,
+    }
+})
+aboutdalinpo2.from(".about_dalinpo_img1", { y: 200, opacity: 0})
+.from(".about_dalinpo_content2",{ y: 200, opacity: 0})
+.from(".about_dalinpo_img2",{ y: 210, opacity: 0})
+.from(".about_dalinpo_img3",{ y: 220, opacity: 0})
 
-
-
-
-
-
+let about_dalinpo3 = gsap.timeline({
+    ease: Back.inOut,
+    scrollTrigger: {
+        trigger: '.about_dalinpo3',
+        start: "top center",
+        end: "+=500",
+    }
+})
+about_dalinpo3.from(".about_dalinpo3_content", { y: -220,opacity: 0})
