@@ -20,9 +20,11 @@ a {
 	text-decoration: none !important;
 	color: #000;
 }
-p{
+
+p {
 	color: #686868;
 }
+
 .u-block {
 	display: block;
 }
@@ -36,7 +38,7 @@ p{
 }
 
 /* loading */
-#app{
+#app {
 	position: fixed;
 	background-color: #fff;
 	z-index: 101;
@@ -50,13 +52,15 @@ p{
 	transition: all 0.5s ease-in-out;
 
 }
-.complete{
+
+.complete {
 	top: -100% !important;
 }
+
 /* loading */
 
 /* transtiton */
-ul.transtiton{
+ul.transtiton {
 	display: flex;
 	position: absolute;
 	z-index: 1020;
@@ -69,11 +73,13 @@ ul.transtiton{
 	pointer-events: none;
 
 }
-ul.transtiton li{
+
+ul.transtiton li {
 	transform: scaleY(0);
 	background: white;
 	width: 20%;
 }
+
 /* transtiton */
 .wrapper {
 	position: absolute;
@@ -312,7 +318,58 @@ ul.transtiton li{
 	animation-name: fadeInDown;
 }
 
+.food_bg {
+	position: fixed; 
+	left: 0;
+	top: 0;
+	width: 100vw; 
+	height: 100vh; 
+	z-index: 9999;
+	overflow: auto; 
+	background-color: rgba(65, 65, 65, 0.5);
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+.food_open{
+	display: flex;
+}
+.food_mid{
+	height: 90%;
+    width: 80%;
+    background-color: #fff;
+    padding: 20px;
 
+}
+.popup-close{
+	display: inline-block;
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	font-size: 18px;
+	color: #fff;
+	background-color: #f1a993;
+	border-radius: 100%;
+    width: 30px;
+    height: 30px;
+	text-align: center;
+	cursor: pointer;
+}
+.popup-close:hover{
+	color: #fff;
+}
+.food_content{
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+	padding: 10px;
+}
+.food_mid>img{
+	display: inline-block;
+	width: 49%;
+	height: 100%;
+    padding: 60px 10px 0px 10px;
+}
 @keyframes fadeInDown {
 	0% {
 		opacity: 0;
@@ -329,20 +386,22 @@ ul.transtiton li{
 
 
 /* banner */
-.banner{
+.banner {
 	position: relative;
 }
+
 .banner>.your-class>img {
 	max-height: 80%;
 	width: 100%;
 }
 
 /* section1 */
-.section1{
+.section1 {
 	position: relative;
 	margin-bottom: 9.3rem;
 
 }
+
 .cloud {
 	position: absolute;
 	top: -28px;
@@ -480,9 +539,9 @@ ul.transtiton li{
 	display: inline-block;
 	position: absolute;
 	top: 60%;
-    left: -100px;
-    width: 400px;
-    height: 15%;
+	left: -100px;
+	width: 400px;
+	height: 15%;
 	background-image: url('../images/小雲-1.png');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -492,9 +551,9 @@ ul.transtiton li{
 	display: inline-block;
 	position: absolute;
 	top: 85%;
-    right: -60px;
-    width: 270px;
-    height: 10%;
+	right: 0px;
+	width: 270px;
+	height: 10%;
 	background-image: url('../images/小雲-3.png');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -504,9 +563,9 @@ ul.transtiton li{
 	display: inline-block;
 	position: absolute;
 	bottom: -10%;
-    left: 300px;
-    width: 10%;
-    height: 6%;
+	left: 300px;
+	width: 10%;
+	height: 6%;
 	background-image: url('../images/小雲-2.png');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -719,7 +778,7 @@ ul.transtiton li{
 
 .Food_content_img {
 	position: relative;
-	margin: 0 30px;
+	margin: 0 15px;
 }
 
 .Food_content_img>img {
@@ -753,6 +812,7 @@ ul.transtiton li{
 	padding: 20px;
 	height: 100%;
 	color: #fff;
+	cursor: pointer;
 }
 
 .food_a_text:hover {
@@ -763,6 +823,7 @@ ul.transtiton li{
 	letter-spacing: 1px;
 	line-height: 25px;
 	font-size: 0.9rem;
+	color: rgb(233, 233, 233);
 }
 
 /* section4 */
@@ -809,19 +870,22 @@ a.is-hover:hover .c-anchor-lineIn {
 	background-size: 100% 1px;
 	background-position: 0 100%;
 }
-.card_figure_content>img{
+
+.card_figure_content>img {
 	width: 100%;
 	transition: all 0.3s;
 }
-.card_figure_content > img:hover{
+
+.card_figure_content>img:hover {
 	transform: scale(1.01);
 }
+
 /* footer */
-.footercontent{
+.footercontent {
 	position: relative;
 }
 
-.footer_people{
+.footer_people {
 	display: inline-block;
 	position: absolute;
 	top: -130px;
@@ -833,18 +897,19 @@ a.is-hover:hover .c-anchor-lineIn {
 	height: 218px;
 }
 
-.footer_cloud{
+.footer_cloud {
 	display: inline-block;
-    position: absolute;
-    top: -180px;
-    transform: rotate(270deg);
-    left: -10%;
-    background-image: url(../images/雲-1.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    width: 170px;
-    height: 200px;
+	position: absolute;
+	top: -180px;
+	transform: rotate(270deg);
+	left: -10%;
+	background-image: url(../images/雲-1.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 170px;
+	height: 200px;
 }
+
 .footer {
 	padding: 45px 0px;
 }
@@ -941,16 +1006,18 @@ a.is-hover:hover .c-anchor-lineIn {
 		float: none;
 
 	}
-	.menu>li:nth-child(2){
+
+	.menu>li:nth-child(2) {
 		margin-top: 50px;
 	}
+
 	.menu>li>a {
 		line-height: 20px;
 		color: rgb(255, 255, 255);
 		display: inline-block;
 		padding: 20px 30px;
 		letter-spacing: 8px;
-    	font-size: 1.2rem;
+		font-size: 1.2rem;
 	}
 
 	.menu>li>a:hover {
@@ -1011,35 +1078,42 @@ a.is-hover:hover .c-anchor-lineIn {
 		visibility: visible !important;
 	}
 
-	.title{
+	.title {
 		font-size: 2.55rem;
 		padding-top: 10%;
 	}
-	.titleh1>h2::after{
+
+	.titleh1>h2::after {
 		bottom: -21px;
-    	right: 30%;	
+		right: 30%;
 	}
-	.content_p::after{
+
+	.content_p::after {
 		right: 0px;
 		width: 150px;
 		height: 15%;
 	}
-	.content_p::before{
+
+	.content_p::before {
 		left: 0px;
 		width: 164px;
 		height: 17%;
 	}
-	.title1_tw_Food::after{
+
+	.title1_tw_Food::after {
 		width: 80%;
 	}
-	.Food_content_img{
-		margin:0px;
+
+	.Food_content_img {
+		margin: 10px;
 	}
-	.c-card__figure>img{
-		margin:0px;
-		width:90%;
+
+	.c-card__figure>img {
+		margin: 0px;
+		width: 90%;
 	}
-	.card_figure_content>img{
+
+	.card_figure_content>img {
 		width: 100%;
 	}
 }
@@ -1047,71 +1121,80 @@ a.is-hover:hover .c-anchor-lineIn {
 
 
 /* about */
-.about-class>img{
+.about-class>img {
 	width: 100%;
 }
+
 .about_section1::before {
 	content: "";
 	display: inline-block;
 	position: absolute;
 	top: 105px;
-    width: 220px;
-    left: -4%;
-    height: 60px;
+	width: 220px;
+	left: -4%;
+	height: 60px;
 	opacity: 0.3;
 	background-image: url('../images/未命名-1工作區域-2.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
 .about_section1::after {
 	content: "";
 	display: inline-block;
 	position: absolute;
 	top: 15px;
-    width: 220px;
-    right: -4%;
-    height: 60px;
+	width: 220px;
+	right: -4%;
+	height: 60px;
 	opacity: 0.5;
 	background-image: url('../images/未命名-1工作區域-2.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-.banner h1{
+
+.banner h1 {
 	display: inline-block;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%, -50%);
 	font-size: 3.5rem;
-    letter-spacing: 25px;
-    color: #fff;
-    text-shadow: 2px 9px 8px #545454;
+	letter-spacing: 25px;
+	color: #fff;
+	text-shadow: 2px 9px 8px #545454;
 }
-.about_section1{
+
+.about_section1 {
 	padding: 30px 0;
 	position: relative;
 	overflow: hidden;
 }
+
 .about_h2_title {
 	text-align: center;
 	margin: 50px 0px 10px 0;
 	font-size: 40px;
 	letter-spacing: 10px;
 }
-.about_content{
+
+.about_content {
 	padding: 60px 0 120px 0;
-    text-align: center;
-    line-height: 55px;
-    font-size: 1.3rem;
-    letter-spacing: 10px;
-    color: #525252;
+	text-align: center;
+	line-height: 55px;
+	font-size: 1.3rem;
+	letter-spacing: 10px;
+	color: #525252;
 }
-.about_title_color{
+
+.about_title_color {
 	color: #f1a993;
 }
-.about_title_color:nth-child(2){
+
+.about_title_color:nth-child(2) {
 	margin-left: 50px;
 }
+
 .about_bg::after {
 	content: "";
 	display: inline-block;
@@ -1124,51 +1207,58 @@ a.is-hover:hover .c-anchor-lineIn {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
-.about_section2{
+
+.about_section2 {
 	padding: 30px 0px;
 	position: relative;
 	overflow: hidden;
 }
-.about_h3{
+
+.about_h3 {
 	text-align: center;
 	position: relative;
 	color: rgb(129, 129, 129);
 	padding: 15px;
 }
-.about_h3::after{
+
+.about_h3::after {
 	content: "";
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    right: 32%;
-    width: 12%;
-    height: 1px;
-    background-color: #d5d5d5;
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 32%;
+	width: 12%;
+	height: 1px;
+	background-color: #d5d5d5;
 }
-.about_h3::before{
+
+.about_h3::before {
 	content: "";
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 32%;
-    width: 12%;
-    height: 1px;
-    background-color: #d5d5d5;
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 32%;
+	width: 12%;
+	height: 1px;
+	background-color: #d5d5d5;
 }
-.team_title{
+
+.team_title {
 	font-size: 1.25rem;
 }
-.contetn_team{
+
+.contetn_team {
 	font-size: 1.25rem;
 	color: rgb(129, 129, 129);
 }
+
 .section_cloud1 {
 	display: inline-block;
 	position: absolute;
 	top: 20%;
-    width: 260px;
-    left: -5%;
-    height: 70px;
+	width: 260px;
+	left: -5%;
+	height: 70px;
 	opacity: 0.6;
 	background-image: url('../images/未命名-1工作區域-2.png');
 	background-size: cover;
@@ -1180,57 +1270,64 @@ a.is-hover:hover .c-anchor-lineIn {
 	display: inline-block;
 	position: absolute;
 	top: 0px;
-    width: 220px;
-    right: 20%;
-    height: 60px;
+	width: 220px;
+	right: 20%;
+	height: 60px;
 	opacity: 0.5;
 	background-image: url('../images/未命名-1工作區域-2.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	transition: all 0.2s;
 }
+
 .section_cloud3 {
 	display: inline-block;
 	position: absolute;
 	top: 25%;
-    width: 260px;
-    right: -5%;
-    height: 70px;
+	width: 260px;
+	right: -5%;
+	height: 70px;
 	opacity: 0.6;
 	background-image: url('../images/未命名-1工作區域-2.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	transition: all 0.2s;
 }
+
 /* about_dalinpo */
-.about_dalinpo1{
+.about_dalinpo1 {
 	padding: 30px 0px;
 	position: relative;
 	overflow: hidden;
 }
-.about_dalinpo_title{
+
+.about_dalinpo_title {
 	padding-bottom: 30px;
 	position: relative;
 }
-.about_dalinpo_content{
+
+.about_dalinpo_content {
 	font-size: 1.3rem;
 	line-height: 2.5rem;
 	letter-spacing: 8px;
-	
+
 }
-.about_dalinpo2{
+
+.about_dalinpo2 {
 	margin: 30px 0px 0px 0px;
 	position: relative;
 	overflow: hidden;
 	padding-bottom: 200px;
 }
-.about_dalinpo_img{
+
+.about_dalinpo_img {
 	width: 100%;
 }
-.about_dalinpo_title::before{
+
+.about_dalinpo_title::before {
 	content: "";
-    display: inline-block;
-    position: absolute;
+	display: inline-block;
+	position: absolute;
 	bottom: -38px;
 	left: -20%;
 	width: 240px;
@@ -1240,48 +1337,55 @@ a.is-hover:hover .c-anchor-lineIn {
 	background-repeat: no-repeat;
 
 }
-.about_dalinpo_cloud{
+
+.about_dalinpo_cloud {
 	position: absolute;
 	background-repeat: no-repeat;
 	display: inline-block;
 	background-size: 100% 100%;
 }
-.about_dalinpo_cloud1{
+
+.about_dalinpo_cloud1 {
 	background-image: url("../images/未命名-1工作區域-2.png");
 	bottom: 20px;
 	right: 20%;
 	width: 250px;
-    height: 70px;
+	height: 70px;
 }
-.about_dalinpo_cloud2{
+
+.about_dalinpo_cloud2 {
 	background-image: url("../images/小雲-3.png");
 	top: 20px;
 	right: -15%;
-    width: 320px;
+	width: 320px;
 	height: 100px;
 }
-.about_dalinpo_cloud4{
+
+.about_dalinpo_cloud4 {
 	background-image: url("../images/小雲-1.png");
 	bottom: 20%;
-    left: -45%;
-    z-index: -1;
-    width: 280px;
-    height: 110px;
+	left: -45%;
+	z-index: -1;
+	width: 280px;
+	height: 110px;
 }
-.about_dalinpo_cloud5{
+
+.about_dalinpo_cloud5 {
 	background-image: url("../images/小雲-1.png");
-    bottom: -30%;
-    right: -66%;
-    z-index: -1;
-    width: 280px;
-    height: 110px;
+	bottom: -30%;
+	right: -66%;
+	z-index: -1;
+	width: 280px;
+	height: 110px;
 }
-.about_dalinpo3{
+
+.about_dalinpo3 {
 	margin-bottom: 200px;
 	position: relative;
 
 }
-.dalinpo_footer_img{
+
+.dalinpo_footer_img {
 	background-image: url("../images/1646640393791.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -1289,18 +1393,19 @@ a.is-hover:hover .c-anchor-lineIn {
 	width: 100%;
 	height: 500px;
 }
-.about_dalinpo3_content{
+
+.about_dalinpo3_content {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%, -50%);
 	display: inline-block;
 	padding: 55px 20px;
 	background-color: rgba(255, 255, 255, 0.8);
 	border-radius: 15px;
 }
 
-.dalinpo_bottom{
+.dalinpo_bottom {
 	text-align: center;
 	letter-spacing: 10px;
 	font-size: 20px;
@@ -1311,12 +1416,26 @@ a.is-hover:hover .c-anchor-lineIn {
 
 /* 手機板 */
 @media (max-width: 767px) {
-	.banner h1{
+	#animation_container {
+		width: 250px !important;
+		height: 200px !important;
+	}
+
+	#animation_container>canvas {
+		width: 250px !important;
+		height: 200px !important;
+	}
+	#animation_container>#dom_overlay_container{
+		width: 250px !important;
+		height: 200px !important;
+	}
+	.banner h1 {
 		font-size: 1.95rem;
 		letter-spacing: 3px;
-		white-space:nowrap;
+		white-space: nowrap;
 		top: 60%;
 	}
+
 	.navbar .logo {
 		height: 60px;
 		margin-top: 10px;
@@ -1330,326 +1449,422 @@ a.is-hover:hover .c-anchor-lineIn {
 		width: 20.53333%;
 		height: 100px;
 	}
-	.section1{
+
+	.section1 {
 		margin-bottom: 4.3rem;
 	}
+
 	.top_cloud_2>img, .top_cloud_1>img {
 		width: 100%;
 		height: 8.2rem;
 	}
 
 	/* section1 */
-	.titleh1{
+	.titleh1 {
 		margin-bottom: 6rem;
 	}
-	.about_button{
+
+	.about_button {
 		padding: 10px 0;
 		font-size: 0.9rem;
 	}
-	.content_buttom{
+
+	.content_buttom {
 		max-width: 10rem;
 	}
-	.titleh1>h2{
+
+	.titleh1>h2 {
 		font-size: calc(1.025rem + .9vw);
 	}
+
 	.title {
 		letter-spacing: 6px;
 		font-size: 1.75rem;
 		line-height: 45px;
 		padding-top: 15%;
 	}
-	.title::before{
+
+	.title::before {
 		display: none;
 	}
-	.titleh1::after{
+
+	.titleh1::after {
 		display: none;
 	}
-	.titleh1>h2::after{
+
+	.titleh1>h2::after {
 		display: none;
 	}
-	.title::after{
+
+	.title::after {
 		display: none;
 	}
-	.titleh1>h2::before{
+
+	.titleh1>h2::before {
 		display: none;
 	}
-	.titleh1::before{
+
+	.titleh1::before {
 		display: none;
 	}
-	.content_p::before{
+
+	.content_p::before {
 		left: -30px;
 		width: 100px;
 		height: 10%;
 	}
-	.content_p::after{
+
+	.content_p::after {
 		top: 30%;
 		right: 0px;
 		width: 80px;
 		height: 25px;
 	}
-	.xiaoyun{
+
+	.xiaoyun {
 		width: 83px;
 		height: 22px;
 		margin: -20px 1%;
 	}
-	.section2{
+
+	.section2 {
 		margin-bottom: 80px;
-    	padding: 0.5rem 0px 6.5rem 0px;
+		padding: 0.5rem 0px 6.5rem 0px;
 	}
-	.content_hr{
+
+	.content_hr {
 		margin: 1rem auto;
 	}
-	.content_p{
+
+	.content_p {
 		line-height: 2.1rem;
 	}
-	.content_h3>h3{
+
+	.content_h3>h3 {
 		font-size: calc(1.1rem + .6vw);
 	}
-	.c_title_en{
+
+	.c_title_en {
 		letter-spacing: 2px;
-    	font-size: 2.2rem;	
+		font-size: 2.2rem;
 	}
-	.title1_tw{
+
+	.title1_tw {
 		font-size: 1.1rem;
 	}
-	.title1_tw::after{
+
+	.title1_tw::after {
 		width: 3rem;
 	}
-	.title1_tw_left::before{
+
+	.title1_tw_left::before {
 		width: 3rem;
 	}
-	.title1_tw{
+
+	.title1_tw {
 		letter-spacing: 0.1em;
 	}
-	.prevwrapper,.nextwrapper{
+
+	.prevwrapper, .nextwrapper {
 		top: -90px;
 		padding: 9px 10px;
 	}
-	.prevwrapper{
+
+	.prevwrapper {
 		right: 80px;
 	}
-	.nextwrapper{
+
+	.nextwrapper {
 		right: 20px;
 	}
-	.next,.prev{
+
+	.next, .prev {
 		top: -90px;
 		padding: 9px 10px;
 	}
-	.next{
+
+	.next {
 		left: 70px;
 	}
-	.title1_tw_left{
+
+	.title1_tw_left {
 		letter-spacing: 0;
 		font-size: 1.1rem;
 	}
-	.c-card__figure>img{
+
+	.c-card__figure>img {
 		margin: 0 auto;
 	}
-	.c-card__time{
+
+	.c-card__time {
 		text-align: center;
 	}
-	.c-card__title{
+
+	.c-card__title {
 		text-align: center;
 		font-size: 0.95rem;
 	}
-	.section2::before{
+
+	.section2::before {
 		width: 230px;
 		height: 75px;
 	}
-	.title1_tw_Food::before{
+
+	.title1_tw_Food::before {
 		top: -50px;
 		right: 10px;
 		width: 150px;
 		height: 60px;
 	}
-	.title1_tw_Food::after{
+
+	.title1_tw_Food::after {
 		width: 75%;
 	}
-	.Food_content_img{
-		margin: 10px 30px;
+
+	.Food_content_img {
+		margin: 10px 15px;
 	}
-	.card_title{
+
+	.card_title {
 		text-align: center;
 	}
-	.c-card__figure{
-		margin-bottom:0.9rem;
+
+	.c-card__figure {
+		margin-bottom: 0.9rem;
 	}
-	.card_content{
+
+	.card_content {
 		margin-bottom: 2.5rem;
 	}
-	.footercontent::before{
+
+	.footercontent::before {
 		width: 150px;
 		height: 125px;
 		top: -80px;
 	}
-	.footercontent::after{
+
+	.footercontent::after {
 		top: -45%;
 		left: 0%;
 		width: 140px;
-    	height: 170px;
+		height: 170px;
 	}
-	.footerlogo>img{
+
+	.footerlogo>img {
 		width: 50%;
 		margin: 35px auto;
 		display: block;
 	}
-	.footertext>p{
+
+	.footertext>p {
 		text-align: center;
 		font-size: 1.1rem;
 	}
-	.footertext>p>span{
+
+	.footertext>p>span {
 		padding: 0px 10px;
 	}
-	.section4{
+
+	.section4 {
 		margin-bottom: 100px;
 	}
-	.card_figure_content>img{
+
+	.card_figure_content>img {
 		width: 100%;
 	}
-	.cloud_content_p1{
+
+	.cloud_content_p1 {
 		z-index: -1;
 		opacity: 0.25 !important;
 		left: -20px;
 		width: 180px;
 		height: 10%;
 	}
-	.cloud_content_p2{
+
+	.cloud_content_p2 {
 		z-index: -1;
 		opacity: 0.5 !important;
 		right: 0px;
 		width: 100px;
 		height: 8%;
 	}
-	.cloud_content_p3{
+
+	.cloud_content_p3 {
 		width: 25%;
 		height: 6%;
 		z-index: -1;
 		opacity: 0.5 !important;
 		left: 0px;
 	}
-	.footer_cloud{
+
+	.footer_cloud {
 		left: 0%;
 		width: 100px;
 		height: 100px;
 		top: -90px;
 		z-index: -1;
 	}
-	.footer_people{
+
+	.footer_people {
 		top: -85px;
 		right: 0px;
 		background-size: 100% 100%;
 		width: 160px;
 		height: 140px;
 	}
-	.ferry{
+
+	.ferry {
 		width: 320px;
 		height: 65px;
 		background-size: 100% 100%;
 	}
-	.about_dalinpo_title::before{
+
+	.overlay {
+		padding: 5px;
+	}
+
+	.food_a_text {
+		padding: 5px;
+	}
+
+	.food_a_text>hr {
+		margin: 0.2rem 0 !important;
+	}
+
+	.food_a_text:hover {
+		color: #fff;
+	}
+
+	.food_a_text>p {
+		letter-spacing: 1px;
+		line-height: 25px;
+		font-size: 0.9rem;
+		margin-bottom: 0;
+	}
+
+	.about_dalinpo_title::before {
 		bottom: 40px;
 		left: -30%;
 		width: 180px;
 		height: 55px;
 		z-index: -1;
 	}
-	.about_dalinpo_cloud2{
+
+	.about_dalinpo_cloud2 {
 		top: 0px;
 		right: -20%;
 		width: 170px;
 		height: 60px;
 	}
-	.about_dalinpo_cloud1{
+
+	.about_dalinpo_cloud1 {
 		bottom: -30px;
 		right: 0%;
 		width: 150px;
 		height: 40px;
 	}
-	.about_dalinpo_content{
+
+	.about_dalinpo_content {
 		font-size: 1.25rem;
 		line-height: 1.95rem;
 		letter-spacing: 1px;
 	}
-	.about_dalinpo_cloud5{
+
+	.about_dalinpo_cloud5 {
 		bottom: -15%;
 		right: 0%;
 		width: 180px;
 		height: 50px;
 	}
-	.about_dalinpo_content{
+
+	.about_dalinpo_content {
 		letter-spacing: 1px;
 	}
-	.dalinpo_footer_img{
+
+	.dalinpo_footer_img {
 		background-size: cover;
 		background-position: center;
 		width: 100%;
 		height: 400px;
 	}
-	.dalinpo_bottom{
+
+	.dalinpo_bottom {
 		letter-spacing: 0px;
 		font-size: 1.2rem;
 		margin: 10px;
 		line-height: 30px;
 	}
-	.about_dalinpo3_content{
+
+	.about_dalinpo3_content {
 		transform: none;
 		top: -25%;
-    	left: 0%;
+		left: 0%;
 	}
-	.about_h2_title{
+
+	.about_h2_title {
 		font-size: 1.9rem;
-    	letter-spacing: 1px;
+		letter-spacing: 1px;
 	}
-	.about_section1::after{
+
+	.about_section1::after {
 		background-size: 100% 100%;
 		width: 180px;
 		height: 40px;
 	}
-	.about_section1::before{
+
+	.about_section1::before {
 		width: 180px;
 		height: 40px;
 		background-size: 100% 100%;
 		left: -20%;
 	}
-	.about_content{
+
+	.about_content {
 		letter-spacing: 1px;
 		line-height: 40px;
 	}
-	.section_cloud2{
+
+	.section_cloud2 {
 		width: 160px;
 		right: 0%;
 		height: 40px;
 		background-size: 100% 100%;
 	}
-	.section_cloud1{
+
+	.section_cloud1 {
 		background-size: 100% 100%;
 		width: 150px;
 		left: -10%;
 		height: 40px;
 	}
-	.about_h3::before{
+
+	.about_h3::before {
 		left: 18%;
 	}
-	.about_h3::after{
+
+	.about_h3::after {
 		right: 18%;
 	}
-	.section_cloud3{
+
+	.section_cloud3 {
 		top: 15%;
 		width: 180px;
 		right: -15%;
 		height: 40px;
 		background-size: 100% 100%;
 	}
-	.team_title,.contetn_team{
+
+	.team_title, .contetn_team {
 		text-align: center;
 	}
 
 }
-@media (max-width: 767px) and (min-width: 567px){
-	.footercontent::after{
+
+@media (max-width: 767px) and (min-width: 567px) {
+	.footercontent::after {
 		top: -45%;
 		left: -10%;
 		width: 140px;
-    	height: 170px;
+		height: 170px;
 	}
 }

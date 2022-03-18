@@ -14,7 +14,6 @@ $(document).ready(function () {
 
     function togglelist() {
         $('.menubar').click(function () {
-            
             $(this).toggleClass('open');
             $('body').toggleClass('body-overflow');
             $('.menu').toggleClass('menunavbaroverflow');
@@ -49,6 +48,16 @@ $(document).ready(function () {
     }
     hasclass();
 
+
+    //  wheel
+    $(window).scroll(function(e){
+        console.log(e.originalEvent)
+        
+    })
+    
+
+
+
     // $('.your-class').slick({
     //     dots: false,
     //     infinite: true,
@@ -60,6 +69,30 @@ $(document).ready(function () {
     //     adaptiveHeight: true,
     //     appendArrows: false
     // });
+    $('.Food_row').slick({
+        slidesToShow: 3,
+        centerPadding: '60px',
+        autoplay: true,
+        infinite: true,
+        speed: 1000,
+        dots: false,
+        useCSS: false,
+        nextArrow: false,
+        prevArrow: false,
+        centerMode: true,
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    centerPadding: '0px',
+                    slidesToScroll: 2
+                }
+            }
+        ]
+    });
+
 
     $('.responsive').slick({
         dots: false,
@@ -155,6 +188,10 @@ $(document).ready(function () {
         $('.cloud_content_p3').css("transform","translateX("+ (index_scrolly/-20) +"px)");
     })
 });
+
+
+
+
 // 視差滾動動畫
 let tl = gsap.timeline({
     ease:Circ.easeOut,
@@ -199,9 +236,7 @@ let t4 = gsap.timeline({
 })
 t4.from(".c_title_en3", { x: -100, opacity: 0,duration: 0.3})
     .from(".title1_tw3", { x: -100, opacity: 0,duration: 0.3})
-    .from(".Food_img1", { scale: 0.3, rotation: 360, opacity: 0,duration: 0.3})
-    .from(".Food_img2", { scale: 0.3, rotation: 360, opacity: 0,duration: 0.3})
-    .from(".Food_img3", { scale: 0.3, rotation: 360, opacity: 0,duration: 0.3})
+    .from(".Food_row", { opacity: 0})
 
 
 let t5 = gsap.timeline({
@@ -211,7 +246,6 @@ let t5 = gsap.timeline({
         trigger: '.c_title_en4',
         start: "bottom center",
         end: "+=100",
-
     }
 })
 t5.from(".c_title_en4", { x: -100, opacity: 0})
@@ -319,3 +353,26 @@ let about_dalinpo3 = gsap.timeline({
     }
 })
 about_dalinpo3.from(".about_dalinpo3_content", { y: -220,opacity: 0})
+
+
+
+var sw = new Food_Popup();
+var Food_content_img = document.getElementsByClassName("Food_content_img")
+var food_title = document.getElementsByClassName('food_title');
+
+for (var i = 0; i < Food_content_img.length; i++) {
+    Food_content_img[i].addEventListener('click', showComment, false);
+  }
+
+function showComment(){
+    var food_title = this.children[1].children[0].children[0].innerText;
+    var food_img = this.children[0].getAttribute("src");
+    var food_contetn = this.children[1].children[0].children[2].innerText;
+    sw.open(food_title,food_img,food_contetn);
+}
+
+
+
+
+
+
