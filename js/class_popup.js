@@ -68,6 +68,5 @@ class Food_Popup {
         this.h4.setText("");
         this.pcontent.setText("");
         this.food_img.setAttribute({ src: "" })
-
     }
 }

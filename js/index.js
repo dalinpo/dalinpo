@@ -49,15 +49,6 @@ $(document).ready(function () {
     hasclass();
 
 
-    //  wheel
-    $(window).scroll(function(e){
-        console.log(e.originalEvent)
-        
-    })
-    
-
-
-
     // $('.your-class').slick({
     //     dots: false,
     //     infinite: true,
@@ -367,8 +358,12 @@ for (var i = 0; i < Food_content_img.length; i++) {
 function showComment(){
     var food_title = this.children[1].children[0].children[0].innerText;
     var food_img = this.children[0].getAttribute("src");
-    var food_contetn = this.children[1].children[0].children[2].innerText;
+    var food_contetn = this.children[1].children[0].children[3].innerText;
     sw.open(food_title,food_img,food_contetn);
+    var master = gsap.timeline();
+    master.from(".food_mid", {opacity: 0,scale: 0.2,ease: "expo.out"})
+            .from('.food_content',{x:-100,opacity: 0, ease:"power4.out"})
+            .from('.food_img',{x:100,opacity: 0, ease:"power4.out"})
 }
 
 
