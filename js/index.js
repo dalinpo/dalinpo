@@ -77,8 +77,8 @@ $(document).ready(function () {
     //     appendArrows: false
     // });
     $('.Food_row').slick({
-        slidesToShow: 3,
-        centerPadding: '60px',
+        slidesToShow: 4,
+        centerPadding: '120px',
         autoplay: true,
         infinite: true,
         speed: 1000,
@@ -143,8 +143,8 @@ $(document).ready(function () {
             {
                 breakpoint: 767,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
         ]
@@ -175,8 +175,8 @@ $(document).ready(function () {
             {
                 breakpoint: 767,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
         ]
@@ -406,9 +406,8 @@ for (var i = 0; i < ishover.length; i++) {
     ishover[i].addEventListener('click', showTrivia, false);
 }
 function showTrivia() {
-    var Triviatitle = this.children[2].innerText
+    var Triviatitle = this.children[2].innerText;
     var iframe = this.children[3].getAttribute("src");
-    console.log(iframe)
     trivia.trivia_open(Triviatitle, iframe);
     var iframe_master = gsap.timeline();
     iframe_master.from(".food_bg", { opacity: 0, scale: 0.2, ease: "power4.out" })
