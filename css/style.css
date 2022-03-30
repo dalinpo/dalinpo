@@ -784,6 +784,7 @@ ul.transtiton li {
 
 .Food_content_img>img {
 	width: 100%;
+	height: 450px;
 }
 
 .overlay {
@@ -826,7 +827,9 @@ ul.transtiton li {
 	font-size: 0.9rem;
 	color: rgb(233, 233, 233);
 }
-
+.food-detail{
+	line-height: 20px;
+}
 /* section4 */
 .section4 {
 	margin-bottom: 180px;
@@ -866,12 +869,16 @@ ul.transtiton li {
 	background-size: 0 1px;
 	background-position: 100% 100%;
 }
-
-a.is-hover:hover .c-anchor-lineIn {
+.is-hover{
+	cursor: pointer;
+}
+.is-hover:hover .c-anchor-lineIn {
 	background-size: 100% 1px;
 	background-position: 0 100%;
 }
-
+.is-hover>iframe{
+	display: none;
+}
 .card_figure_content>img {
 	width: 100%;
 	transition: all 0.3s;
@@ -881,6 +888,23 @@ a.is-hover:hover .c-anchor-lineIn {
 	transform: scale(1.01);
 }
 
+#trivia{
+	position: relative;
+}
+.triviaclose{
+	width: 50px;
+    height: 50px;
+    font-size: 30px;
+	top: -20%;
+    right: -20%;
+}
+.trivia_h4{
+	text-align: center;
+    margin-bottom: 20px;
+    line-height: 3.2rem;
+    font-size: 2.15rem;
+    color: #fff;
+}
 /* footer */
 .footercontent {
 	position: relative;
@@ -1413,6 +1437,245 @@ a.is-hover:hover .c-anchor-lineIn {
 	line-height: 36px;
 }
 
+/* 創刊號 */
+.founding_section1::after{
+	content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+	height: 500px;
+    background-image: url(../images/about_bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+.founding_section1{
+	margin: 80px 0px 200px 0px;
+	padding: 20px;
+}
+.founding_content{
+	padding: 30px 0px 120px 0px;
+}
+.founding_content > img{
+	width: 100%;
+	z-index: 1;
+	background: rgb(255, 255, 255);
+}
+/* 平板 */
+@media (max-width: 991px) {
+
+	.navbar .logo {
+		margin-left: 18px;
+		margin-bottom: 28px;
+	}
+
+	.togglelist {
+		display: inline-block;
+	}
+
+	.fa-caret-down::after {
+		content: "";
+	}
+
+	.fa-caret-down::before {
+		content: "";
+	}
+
+	/* 選單 */
+	.menu {
+		float: none;
+		display: inline-block;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		height: 100%;
+		width: 100%;
+		background-color: #141414;
+		margin-left: 0px;
+		overflow-y: hidden;
+		transform: translate(-0px, -100%);
+		box-shadow: 1px 1px 6px #949494;
+	}
+
+
+	::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
+
+
+	.menunavbaroverflow {
+		transition-duration: 300ms;
+		transform: translate(0px, 0px);
+	}
+
+	.bodyoverflow {
+		transition-duration: 200ms;
+	}
+
+	.menuhearder {
+		display: inline-block;
+		background-color: #141414;
+		padding: 15px;
+	}
+
+	.menuhearder img {
+		width: 100%;
+		height: 60px;
+		padding: 0px;
+	}
+
+	.menu>li {
+		float: none;
+
+	}
+
+	.menu>li:nth-child(2) {
+		margin-top: 50px;
+	}
+
+	.menu>li>a {
+		line-height: 20px;
+		color: rgb(255, 255, 255);
+		display: inline-block;
+		padding: 20px 30px;
+		letter-spacing: 8px;
+		font-size: 1.2rem;
+	}
+
+	.menu>li>a:hover {
+		text-decoration: none;
+		color: rgb(255, 255, 255);
+	}
+
+	.menu .dropdown {
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+		background-color: #5452d6;
+	}
+
+	.menu .dropdown>li>a {
+		line-height: 12px;
+		color: rgb(255, 255, 255);
+		display: inline-block;
+		padding: 20px 30px;
+		letter-spacing: 1px;
+		font-size: 1.7rem;
+		border-bottom: none;
+	}
+
+	.menu .dropdown>li>a:hover {
+		background-color: #5452d6;
+	}
+
+	.menu .btn-submenu {
+		display: inline-block;
+		color: white;
+		padding: 0 10px;
+		font-size: 22px;
+		transition-duration: 300ms;
+		cursor: pointer;
+	}
+
+	/* 第三層 */
+	.menu ul li>ul {
+		position: relative;
+		left: 0 !important;
+		top: 0 !important;
+		transform: translateX(0%) !important;
+		background-color: #5452d6;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transition: all 0.3s;
+	}
+
+	.menu ul li:hover>ul {
+		position: relative;
+		left: 0px !important;
+		top: 0px !important;
+		transform: translateX(0%);
+		background-color: #5452d6;
+		transition: all 0.3s;
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
+
+	.title {
+		font-size: 2.55rem;
+		padding-top: 10%;
+	}
+
+	.titleh1>h2::after {
+		bottom: -21px;
+		right: 30%;
+	}
+
+	.content_p::after {
+		right: 0px;
+		width: 150px;
+		height: 15%;
+	}
+
+	.content_p::before {
+		left: 0px;
+		width: 164px;
+		height: 17%;
+	}
+
+	.title1_tw_Food::after {
+		width: 80%;
+	}
+
+	.Food_content_img {
+		margin: 10px;
+	}
+
+	.c-card__figure>img {
+		margin: 0px;
+		width: 90%;
+	}
+
+	.card_figure_content>img {
+		width: 100%;
+	}
+	.overlay {
+		padding: 15px;
+	}
+
+	.food_a_text {
+		padding: 15px;
+	}
+	.food_title{
+		font-size: calc(1.125rem + .2vw);
+	}
+	.food_a_text>hr{
+		margin: 0.3rem 0;
+	}
+}
+
+
+@media (max-width: 767px) and (min-width: 567px) {
+	.footercontent::after {
+		top: -45%;
+		left: -10%;
+		width: 140px;
+		height: 170px;
+	}
+}
 
 
 /* 手機板 */
@@ -1521,7 +1784,9 @@ a.is-hover:hover .c-anchor-lineIn {
 		width: 80px;
 		height: 25px;
 	}
-
+	.Food_content_img > img{
+		height: 250px;
+	}
 	.xiaoyun {
 		width: 83px;
 		height: 22px;
@@ -1637,7 +1902,14 @@ a.is-hover:hover .c-anchor-lineIn {
 	.card_content {
 		margin-bottom: 2.5rem;
 	}
-
+	.triviaclose{
+		top: -70%;
+    	right: 0%;
+	}
+	.trivia_mid > iframe{
+		width: 350px;
+    	height: 250px;
+	}
 	.footercontent::before {
 		width: 150px;
 		height: 125px;
@@ -1721,11 +1993,11 @@ a.is-hover:hover .c-anchor-lineIn {
 	}
 
 	.overlay {
-		padding: 5px;
+		padding: 10px;
 	}
 
 	.food_a_text {
-		padding: 5px;
+		padding: 10px;
 	}
 
 	.food_a_text>hr {
@@ -1742,7 +2014,10 @@ a.is-hover:hover .c-anchor-lineIn {
 		font-size: 0.9rem;
 		margin-bottom: 0;
 	}
-
+	.food-detail{
+		line-height: 1.35rem;
+    	font-size: 1.15rem;
+	}
 	.about_dalinpo_title::before {
 		bottom: 40px;
 		left: -30%;
@@ -1858,14 +2133,22 @@ a.is-hover:hover .c-anchor-lineIn {
 	.team_title, .contetn_team {
 		text-align: center;
 	}
-
-}
-
-@media (max-width: 767px) and (min-width: 567px) {
-	.footercontent::after {
-		top: -45%;
-		left: -10%;
-		width: 140px;
-		height: 170px;
+	.food_mid{
+		height: 95%;
+		width: 95%;
+		padding: 10px;
+	}
+	.food_content{
+		width: 100%;
+	}
+	.food_mid>img{
+		width: 70%;
+		padding: 10px 10px 0px 10px;
+		height: auto;
+		margin: 0 auto;
+		display: block;
 	}
 }
+
+
+
