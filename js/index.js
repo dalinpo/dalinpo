@@ -76,6 +76,7 @@ $(document).ready(function () {
     //     adaptiveHeight: true,
     //     appendArrows: false
     // });
+
     $('.Food_row').slick({
         slidesToShow: 4,
         centerPadding: '120px',
@@ -115,8 +116,6 @@ $(document).ready(function () {
             },
         ]
     });
-
-
     $('.responsive').slick({
         dots: false,
         slidesToShow: 4,
@@ -182,6 +181,33 @@ $(document).ready(function () {
         ]
     });
 
+    // 您好大林浦
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        autoplay: true,
+        infinite: true,
+        speed: 1000,
+        asNavFor: '.slider-nav'
+      });
+      $('.slider-nav').slick({
+        slidesToShow: 3,
+        // slidesToScroll: 1,
+        autoplay: true,
+        infinite: true,
+        speed: 1000,
+        asNavFor: '.slider-for',
+        dots: false,
+        nextArrow: false,
+        prevArrow: false,
+        centerMode: false,
+        focusOnSelect: true
+      });
+
+
+
     // loading
     var percent = 0;
     var timer = setInterval(function () {
@@ -218,7 +244,7 @@ $(document).ready(function () {
 // 視差滾動動畫
 let tl = gsap.timeline({
     ease: Circ.easeOut,
-    duration: 0.5,
+    duration: 0.3,
     scrollTrigger: {
         trigger: '.top_cloud_1',
         start: "top center",
@@ -242,7 +268,7 @@ let t2 = gsap.timeline({
         end: "+=600"
     }
 })
-t2.from(".c_title_en1", { x: -500, opacity: 0 })
+t2.from(".c_title_en1", { x: -50, opacity: 0 })
     .from(".title1_tw1", { x: -50, opacity: 0 })
     .from(".wrappersss", { y: 50, opacity: 0 })
     .from(".c_title_en2", { x: 50, opacity: 0 })
