@@ -20,6 +20,8 @@ $(document).ready(function () {
             $('.togglelist').toggleClass('bodyoverflow');
             if ($('body').hasClass('body-overflow')) {
                 $('body').removeAttr("style");
+            }else{
+                $('body').css("overflow", "hidden");
             }
         });
     }
@@ -194,7 +196,7 @@ $(document).ready(function () {
       });
       $('.slider-nav').slick({
         slidesToShow: 3,
-        // slidesToScroll: 1,
+        focusOnSelect:true,
         autoplay: true,
         infinite: true,
         speed: 1000,
@@ -203,7 +205,16 @@ $(document).ready(function () {
         nextArrow: false,
         prevArrow: false,
         centerMode: false,
-        focusOnSelect: true
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            }
+        ]
       });
 
 
