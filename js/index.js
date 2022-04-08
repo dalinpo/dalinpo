@@ -80,7 +80,7 @@ $(document).ready(function () {
     // });
 
     $('.Food_row').slick({
-        slidesToShow: 4,
+        slidesToShow: 3,
         centerPadding: '120px',
         autoplay: true,
         infinite: true,
@@ -272,9 +272,8 @@ tl.from(".top_cloud_1", { x: -100, opacity: 0 })
 
 let t2 = gsap.timeline({
     ease: Circ.easeOut,
-    duration: 0.3,
     scrollTrigger: {
-        trigger: '.c_title_en1',
+        trigger: '.sectioncontent',
         start: "top center",
         end: "+=600"
     }
@@ -282,9 +281,19 @@ let t2 = gsap.timeline({
 t2.from(".c_title_en1", { x: -50, opacity: 0 })
     .from(".title1_tw1", { x: -50, opacity: 0 })
     .from(".wrappersss", { y: 50, opacity: 0 })
-    .from(".c_title_en2", { x: 50, opacity: 0 })
+
+let t3 = gsap.timeline({
+    ease: Circ.easeOut,
+    scrollTrigger: {
+        trigger: '#section2',
+        start: "top center",
+        end: "+=600"
+    }
+})
+t3.from(".c_title_en2", { x: 50, opacity: 0 })
     .from(".title1_tw_left2", { x: 50, opacity: 0 })
     .from(".wrappers", { y: 50, opacity: 0 })
+    
 
 
 let t4 = gsap.timeline({
@@ -339,7 +348,8 @@ let t6 = gsap.timeline({
         // markers: true,
     }
 })
-t6.from(".about_content", { y: 50, opacity: 0, duration: 1 })
+t6.from(".about_h4_title", { y: 50, opacity: 0 })
+    .from(".about_content", { y: 50, opacity: 0})
 
 let t7 = gsap.timeline({
     scrollTrigger: {
@@ -414,9 +424,27 @@ let about_dalinpo3 = gsap.timeline({
 })
 about_dalinpo3.from(".about_dalinpo3_content", { y: -220, opacity: 0 })
 
+let founding_section1 = gsap.timeline({
+    ease: Back.inOut,
+    scrollTrigger: {
+        trigger: '.founding_section1',
+        start: "top center",
+        end: "+=500",
+    }
+})
+founding_section1.from(".port_content", { y: 100, opacity: 0 })
+
+let stroytiemline = gsap.timeline({
+    ease: Back.inOut,
+    scrollTrigger: {
+        trigger: '.storycontent',
+        start: "top center",
+        end: "+=500",
+    }
+})
+stroytiemline.from(".stroy_img", { y: 100, opacity: 0 })
 
 // 響食記
-var sw = new Food_Popup();
 var Food_content_img = document.getElementsByClassName("Food_content_img")
 var food_title = document.getElementsByClassName('food_title');
 
@@ -428,7 +456,7 @@ function showComment() {
     var food_title = this.children[1].children[0].children[0].innerText;
     var food_img = this.children[0].getAttribute("src");
     var food_contetn = this.children[1].children[0].children[3].innerHTML;
-
+    var sw = new Food_Popup();
     sw.open(food_title, food_img, food_contetn);
     var master = gsap.timeline();
     master.from(".food_mid", { opacity: 0, scale: 0.2, ease: "expo.out" })
@@ -437,12 +465,12 @@ function showComment() {
 }
 
 // 課程花絮
-var trivia = new Trivia();
 var ishover = document.getElementsByClassName("is-hover")
 for (var i = 0; i < ishover.length; i++) {
     ishover[i].addEventListener('click', showTrivia, false);
 }
 function showTrivia() {
+    var trivia = new Trivia();
     var Triviatitle = this.children[2].innerText;
     var iframe = this.children[3].getAttribute("src");
     trivia.trivia_open(Triviatitle, iframe);
@@ -452,5 +480,20 @@ function showTrivia() {
                 .from(".trivia_mid>iframe", { opacity: 0,rotate: 360, scale: 0.2, ease: "power4.out" })
 }
 
+// 課程花絮
+var stroy_round = document.getElementsByClassName("stroy_round")
+for (var i = 0; i < stroy_round.length; i++) {
+    stroy_round[i].addEventListener('click', showstroy_round);
+}
+function showstroy_round() {
+    var stroy = new Trivia();
+    var stroy_round = this.children[0].innerText;
+    var stroyiframe = this.children[1].getAttribute("src");
+    stroy.trivia_open(stroy_round, stroyiframe);
+    iframe_master.from(".food_bg", { opacity: 0, scale: 0.2, ease: "power4.out" })
+                .from(".trivia_h4", { opacity: 0, scale: 0.2, ease: "power4.out" })
+                .from(".trivia_mid>iframe", { opacity: 0,rotate: 360, scale: 0.2, ease: "power4.out" })
 
+
+}
 

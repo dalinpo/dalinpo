@@ -64,16 +64,15 @@ class Food_Popup {
         this.h4.setText(text);
         this.pcontent.setHTML(pcontetn);
         this.food_img.setAttribute({ src: foodimg })
-
         return new Promise((resolve, reject) => {
             this.close.el.addEventListener("click", () => {
                 this.remove();
                 resolve();
             })
         });
-
     }
     remove() {
+        document.getElementById('food_id').removeChild(this.sw.el)
         this.sw.el.classList.remove("food_open");
         this.h4.setText("");
         this.pcontent.setHTML("");
@@ -117,6 +116,7 @@ class Trivia {
         });
     }
     trivia_remove() {
+        document.getElementById('trivia').removeChild(this.trivia.el)
         this.trivia.el.classList.remove("food_open");
         this.trivia_title.setText("");
         this.iframe.setAttribute({ src: "" })
