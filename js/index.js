@@ -67,17 +67,17 @@ $(document).ready(function () {
 
 
 
-    // $('.your-class').slick({
-    //     dots: false,
-    //     infinite: true,
-    //     speed: 500,
-    //     fade: true,
-    //     cssEase: 'linear',
-    //     autoplay: true,
-    //     autoplaySpeed: 2000,
-    //     adaptiveHeight: true,
-    //     appendArrows: false
-    // });
+    $('.banner').slick({
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: true,
+        autoplaySpeed: 2000,
+        adaptiveHeight: true,
+        appendArrows: false
+    });
 
     $('.Food_row').slick({
         slidesToShow: 3,
@@ -411,6 +411,7 @@ let aboutdalinpo2 = gsap.timeline({
 })
 aboutdalinpo2.from(".about_dalinpo_img1", { y: 100, opacity: 0 })
     .from(".about_dalinpo_content2", { y: 100, opacity: 0 })
+    .from(".about_dalinpo_img4", { y: 210, opacity: 0 })
     .from(".about_dalinpo_img2", { y: 210, opacity: 0 })
     .from(".about_dalinpo_img3", { y: 220, opacity: 0 })
 
