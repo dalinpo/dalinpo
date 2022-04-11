@@ -183,7 +183,7 @@ $(document).ready(function () {
         ]
     });
 
-    // 您好大林浦
+    // 您好大林蒲
     $('.slider-for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
