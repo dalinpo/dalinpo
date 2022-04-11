@@ -14,7 +14,14 @@ let onPointerDownMouseX = 0,
     siteList = [],
     area = "",
     site = "",
-    start = {};
+    start = {},
+    raycaster = new THREE.Raycaster(),
+    mouse = new THREE.Vector2(),
+    mouseEven = {
+        click: false,
+        lat: 0,
+        lon: 0,
+    };
 init();
 
 function init() {
@@ -81,7 +88,8 @@ function init() {
     document.addEventListener('touchend', onDocumentTouchEnd);
     document.addEventListener('touchcancel', onDocumentTouchEnd);
     window.addEventListener('resize', onWindowResize);
-
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener('click', onMouseClick);
 
 
     animate();
@@ -261,6 +269,7 @@ function changeScene(area, site) {
                 setAreData[0].imgs = oldData;
             }
         }
+        document.querySelector("#msg").style.display = "none";
         document.querySelector("#title").innerHTML = setAreData[0].name;
         document.querySelector("#title2").innerHTML = setAreData[0].imgs[0].name;
         document.querySelector(".arrowGroup>p.text").innerHTML = (siteList.indexOf(setAreData[0].imgs[0].name) + 1) + "/" + siteList.length;
@@ -274,7 +283,6 @@ function changeScene(area, site) {
         setInfo.logo.rotation = setAreData[0].imgs[0].logo.rotation;
         setInfo.lookAt.lat = setAreData[0].imgs[0].lookAt.lat;
         setInfo.lookAt.lon = setAreData[0].imgs[0].lookAt.lon;
-
         if (scene.children.length > 0) {
             scene.children = [];
         }
@@ -290,6 +298,12 @@ function changeScene(area, site) {
         const mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
 
+        if (setAreData[0].imgs[0].item != undefined && setAreData[0].imgs[0].item != null) {
+            setAreData[0].imgs[0].item.map(e => {
+                creatIconObject(e)
+            });
+        }
+
         const logoImg = new THREE.ImageUtils.loadTexture(setInfo.logo.path);
         const logoMaterial = new THREE.MeshBasicMaterial({
             map: logoImg
@@ -297,15 +311,18 @@ function changeScene(area, site) {
         const bg = new THREE.MeshBasicMaterial({
             color: 'red'
         })
-        const Logo = new THREE.Mesh(new THREE.CylinderGeometry(250, 250, 1, 40, 40), [bg, logoMaterial, bg]);
+        const Logo = new THREE.Mesh(new THREE.CylinderGeometry(180, 180, 1, 50, 50), [bg, logoMaterial, bg]);
         Logo.overdraw = true;
         Logo.name = 'Logo';
         Logo.position.y = -400;
         Logo.rotation.set(0, setInfo.logo.rotation, 0);
         scene.add(Logo)
 
+
         lat = setInfo.lookAt.lat;
         lon = setInfo.lookAt.lon;
+        camera.fov = 75;
+        camera.updateProjectionMatrix()
     });
 }
 
@@ -337,3 +354,106 @@ function nextScene(num) {
 function getDistance(pointA, pointB) {
     return Math.hypot(pointB.x - pointA.x, pointB.y - pointA.y);
 };
+
+function creatIconObject(item) {
+    let img = new THREE.ImageUtils.loadTexture(item.path);
+    let material = new THREE.MeshBasicMaterial({
+        map: img
+    });
+    let bg = new THREE.MeshBasicMaterial({
+        color: 0x8f5f53
+    })
+    let icon = new THREE.Mesh(new THREE.CylinderGeometry(item.size, item.size + 5, 1, 50, 50), [bg, material, bg]);
+    icon.overdraw = true;
+    icon.name = item.name;
+    icon.position.set(item.position.x, item.position.y, item.position.z);
+    icon.rotation.set(item.rotation.x, item.rotation.y, item.rotation.z);
+    icon.tagType = 'item';
+    icon.goTo = item.goTo;
+    icon.msg = {
+        title: item.title,
+        desc: item.desc
+    }
+    scene.add(icon)
+}
+
+function onMouseMove(event) {
+
+    //通過滑鼠計算出raycaster所需要的位置，中心為原點，範圍值-1到1.
+
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // 綁定位置與相機
+    raycaster.setFromCamera(mouse, camera);
+
+    // raycaster光線與物件相交
+    let intersects = raycaster.intersectObjects(scene.children);
+    let objList = intersects.filter(e => e.object.tagType == "item");
+
+    if (objList.length > 0) {
+        let obj = objList[0].object;
+        obj.material[0].visible = true;
+        obj.material[1].color.set(0x888888);
+        document.querySelector("#container").style.cursor = "pointer";
+    } else {
+        document.querySelector("#container").style.cursor = "inherit";
+        if (!mouseEven.click || (mouseEven.lat != lat && mouseEven.lon != lon)) {
+            document.querySelector("#msg").style.display = "none";
+            let itemList = scene.children.filter(e => e.tagType == 'item').forEach(e => {
+                e.material[0].visible = false;
+                e.material[1].color.set(0xffffff);
+                return e;
+            });
+        }
+
+    }
+}
+
+function onMouseClick(event) {
+
+    //通過滑鼠計算出raycaster所需要的位置，中心為原點，範圍值-1到1.
+
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // 綁定位置與相機
+    raycaster.setFromCamera(mouse, camera);
+
+    // raycaster光線與物件相交
+    let intersects = raycaster.intersectObjects(scene.children);
+    let objList = intersects.filter(e => e.object.tagType == "item");
+
+    if (intersects.length > 1) {
+        if (intersects[0].object.goTo != null && intersects[0].object.goTo != undefined) {
+            let obj = objList[0].object;
+            let width = document.querySelector("body").clientWidth;
+            let msg = document.querySelector("#msg");
+            let top = event.clientY - msg.offsetHeight - 15;
+            let left = event.clientX;
+            if (left + 250 > width) left = left - 125;
+            if (left < 30) left = 30;
+            if (top < 0) top = 0;
+            msg.style.display = "inline-block";
+            msg.style.top = top;
+            msg.style.left = left;
+            msg.innerHTML = "";
+            msg.innerHTML += "<h2>" + obj.msg.title + "</h2>";
+            msg.innerHTML += "<p>" + obj.msg.desc + "</p>";
+            msg.innerHTML += "<div class=\"btn\" onclick='changeScene(\"" + intersects[0].object.goTo[0] + "\",\"" + intersects[0].object.goTo[1] + "\")'>前往</div>";
+            mouseEven.click = true;
+            mouseEven.lon = lon;
+            mouseEven.lat = lat;
+            // changeScene(intersects[0].object.goTo[0], intersects[0].object.goTo[1]);
+        }
+    } else {
+        document.querySelector("#container").style.cursor = "inherit";
+        document.querySelector("#msg").style.display = "none";
+        let itemList = scene.children.filter(e => e.tagType == 'item').forEach(e => {
+            e.material[0].visible = false;
+            e.material[1].color.set(0xffffff);
+            return e;
+        });
+        mouseEven.click = false;
+    }
+}

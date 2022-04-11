@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 html,
 body {
   margin: 0;
@@ -75,7 +82,8 @@ body {
   text-align: right;
   box-sizing: border-box;
 }
-.sideBar>p>svg{
+
+.sideBar>p>svg {
   width: 30px;
 }
 
@@ -136,11 +144,13 @@ body {
   transform: translateX(-50%);
   text-align: center;
 }
-.arrowGroup>p{
+
+.arrowGroup>p {
   font-size: 24px;
   margin: 5px;
   color: #393533;
 }
+
 svg#arrowRight,
 svg#arrowLeft {
   display: inline-block;
@@ -170,4 +180,47 @@ svg.arrow:hover .cls-1 {
 
 svg.arrow .cls-2 {
   fill: #393533;
+}
+
+.message {
+  position: absolute;
+  z-index: 999;
+  width: 250px;
+  min-height: 100px;
+  padding: 15px;
+  color: #393533;
+  border-radius: 20px;
+  background: rgba(241, 169, 147, 0.8);
+  box-sizing: border-box;
+}
+
+.message p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.message h2 {
+  text-align: center;
+  margin: 0;
+  font-weight: 900;
+  font-size: 21px;
+}
+.message .btn {
+  margin: 5px auto;
+  margin-top: 15px;
+  text-align: center;
+  padding: 5px;
+  width: 125px;
+  border: 2px solid #393533;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.message .btn:hover {
+  border: 2px solid #393533;
+  background: #393533;
+  color: #ebe3e0;
 }
