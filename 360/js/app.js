@@ -361,9 +361,9 @@ function creatIconObject(item) {
         map: img
     });
     let bg = new THREE.MeshBasicMaterial({
-        color: 0x8f5f53
+        color: 0xf1a993
     })
-    let icon = new THREE.Mesh(new THREE.CylinderGeometry(item.size, item.size + 5, 1, 50, 50), [bg, material, bg]);
+    let icon = new THREE.Mesh(new THREE.CylinderGeometry(item.size, item.size + 2.5, 1, 50, 50), [bg, material, bg]);
     icon.overdraw = true;
     icon.name = item.name;
     icon.position.set(item.position.x, item.position.y, item.position.z);
@@ -394,6 +394,7 @@ function onMouseMove(event) {
     if (objList.length > 0) {
         let obj = objList[0].object;
         obj.material[0].visible = true;
+        obj.material[0].color.set(0x888888);
         obj.material[1].color.set(0x888888);
         document.querySelector("#container").style.cursor = "pointer";
     } else {
@@ -401,7 +402,7 @@ function onMouseMove(event) {
         if (!mouseEven.click || (mouseEven.lat != lat && mouseEven.lon != lon)) {
             document.querySelector("#msg").style.display = "none";
             let itemList = scene.children.filter(e => e.tagType == 'item').forEach(e => {
-                e.material[0].visible = false;
+                e.material[0].color.set(0xf1a993);
                 e.material[1].color.set(0xffffff);
                 return e;
             });
@@ -450,7 +451,7 @@ function onMouseClick(event) {
         document.querySelector("#container").style.cursor = "inherit";
         document.querySelector("#msg").style.display = "none";
         let itemList = scene.children.filter(e => e.tagType == 'item').forEach(e => {
-            e.material[0].visible = false;
+            e.material[0].color.set(0xf1a993);
             e.material[1].color.set(0xffffff);
             return e;
         });
