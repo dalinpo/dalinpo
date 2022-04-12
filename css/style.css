@@ -624,11 +624,8 @@ ul.transtiton li {
 .about_button:hover {
 	color: rgb(44, 44, 44);
 	border: none;
-
 	background-color: #f1bda1;
 	color: #fff;
-	font-size: 1.22rem;
-
 }
 
 
