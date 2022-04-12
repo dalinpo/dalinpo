@@ -20,7 +20,7 @@ $(document).ready(function () {
             $('.togglelist').toggleClass('bodyoverflow');
             if ($('body').hasClass('body-overflow')) {
                 $('body').removeAttr("style");
-            }else{
+            } else {
                 $('body').css("overflow", "hidden");
             }
         });
@@ -35,17 +35,17 @@ $(document).ready(function () {
             $('.dropdown').removeAttr("style");
         }
 
-        if ($(window).width() < 1199 || $(window).width() < 767){
+        if ($(window).width() < 1199 || $(window).width() < 767) {
             var minimized_elements = $('.food_contet_open');
             var max_str_length = 40;
             var max_found_index = 0;
             $('.food_contet_open').html()
-            minimized_elements.each(function(){
-                var t = $(this).text(); 
-                $(this).html(t.slice(0,max_str_length));
+            minimized_elements.each(function () {
+                var t = $(this).text();
+                $(this).html(t.slice(0, max_str_length));
             });
         }
-        
+
     }
     $(window).resize(function () {
         windowsize();
@@ -60,7 +60,7 @@ $(document).ready(function () {
             e.stopImmediatePropagation();
         });
 
-        
+
     }
     hasclass();
 
@@ -69,10 +69,10 @@ $(document).ready(function () {
 
     $('.banner').slick({
         dots: false,
-        infinite: true,
-        speed: 1000,
         fade: true,
         cssEase: 'linear',
+        infinite: true,
+        speed: 1000,
         autoplay: true,
         autoplaySpeed: 2000,
         adaptiveHeight: true,
@@ -87,8 +87,8 @@ $(document).ready(function () {
         speed: 1000,
         dots: false,
         useCSS: false,
-        nextArrow: false,
-        prevArrow: false,
+        nextArrow: jQuery('.Food_leftdouble'),
+        prevArrow: jQuery('.Food_rightdouble'),
         centerMode: true,
         focusOnSelect: true,
         responsive: [
@@ -103,9 +103,9 @@ $(document).ready(function () {
             {
                 breakpoint: 767,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     centerPadding: '0px',
-                    slidesToScroll: 2
+                    slidesToScroll: 1
                 }
             },
             {
@@ -119,9 +119,14 @@ $(document).ready(function () {
         ]
     });
     $('.responsive').slick({
+        lazyLoad: 'ondemand',
         dots: false,
         slidesToShow: 4,
         slidesToScroll: 1,
+        infinite: true,
+        speed: 1000,
+        autoplay: true,
+        autoplaySpeed: 2000,
         nextArrow: jQuery('.nextwrapper'),
         prevArrow: jQuery('.prevwrapper'),
         responsive: [
@@ -154,6 +159,10 @@ $(document).ready(function () {
         dots: false,
         slidesToShow: 3,
         slidesToScroll: 1,
+        infinite: true,
+        speed: 1000,
+        autoplay: true,
+        autoplaySpeed: 2000,
         nextArrow: jQuery('.next'),
         prevArrow: jQuery('.prev'),
         responsive: [
@@ -182,7 +191,38 @@ $(document).ready(function () {
             }
         ]
     });
-
+    // 關於大林浦
+    $('.about_dalinpo_row').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        speed: 1000,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: false,
+        nextArrow: false,
+        prevArrow: false,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
     // 您好大林蒲
     $('.slider-for').slick({
         slidesToShow: 1,
@@ -193,10 +233,10 @@ $(document).ready(function () {
         infinite: true,
         speed: 1000,
         asNavFor: '.slider-nav'
-      });
-      $('.slider-nav').slick({
+    });
+    $('.slider-nav').slick({
         slidesToShow: 3,
-        focusOnSelect:true,
+        focusOnSelect: true,
         autoplay: true,
         infinite: true,
         speed: 1000,
@@ -215,7 +255,7 @@ $(document).ready(function () {
                 }
             }
         ]
-      });
+    });
 
 
 
@@ -271,7 +311,6 @@ tl.from(".top_cloud_1", { x: -100, opacity: 0 })
     .from(".cloud_content_p3", { x: -100, opacity: 0 })
 
 let t2 = gsap.timeline({
-    ease: Circ.easeOut,
     scrollTrigger: {
         trigger: '.sectioncontent',
         start: "top center",
@@ -280,7 +319,7 @@ let t2 = gsap.timeline({
 })
 t2.from(".c_title_en1", { x: -50, opacity: 0 })
     .from(".title1_tw1", { x: -50, opacity: 0 })
-    .from(".wrappersss", { y: 50, opacity: 0 })
+    .from(".wrappersss", { y: 100, opacity: 0 })
 
 let t3 = gsap.timeline({
     ease: Circ.easeOut,
@@ -293,7 +332,7 @@ let t3 = gsap.timeline({
 t3.from(".c_title_en2", { x: 50, opacity: 0 })
     .from(".title1_tw_left2", { x: 50, opacity: 0 })
     .from(".wrappers", { y: 50, opacity: 0 })
-    
+
 
 
 let t4 = gsap.timeline({
@@ -349,7 +388,7 @@ let t6 = gsap.timeline({
     }
 })
 t6.from(".about_h4_title", { y: 50, opacity: 0 })
-    .from(".about_content", { y: 50, opacity: 0})
+    .from(".about_content", { y: 50, opacity: 0 })
 
 let t7 = gsap.timeline({
     scrollTrigger: {
@@ -411,9 +450,8 @@ let aboutdalinpo2 = gsap.timeline({
 })
 aboutdalinpo2.from(".about_dalinpo_img1", { y: 100, opacity: 0 })
     .from(".about_dalinpo_content2", { y: 100, opacity: 0 })
-    .from(".about_dalinpo_img4", { y: 210, opacity: 0 })
-    .from(".about_dalinpo_img2", { y: 210, opacity: 0 })
-    .from(".about_dalinpo_img3", { y: 220, opacity: 0 })
+    .from(".about_dalinpo_row", { y: 210, opacity: 0 })
+
 
 let about_dalinpo3 = gsap.timeline({
     ease: Back.inOut,
@@ -477,8 +515,8 @@ function showTrivia() {
     trivia.trivia_open(Triviatitle, iframe);
     var iframe_master = gsap.timeline();
     iframe_master.from(".food_bg", { opacity: 0, scale: 0.2, ease: "power4.out" })
-                .from(".trivia_h4", { opacity: 0, scale: 0.2, ease: "power4.out" })
-                .from(".trivia_mid>iframe", { opacity: 0,rotate: 360, scale: 0.2, ease: "power4.out" })
+        .from(".trivia_h4", { opacity: 0, scale: 0.2, ease: "power4.out" })
+        .from(".trivia_mid>iframe", { opacity: 0, rotate: 360, scale: 0.2, ease: "power4.out" })
 }
 
 // 課程花絮
@@ -492,8 +530,8 @@ function showstroy_round() {
     var stroyiframe = this.children[1].getAttribute("src");
     stroy.trivia_open(stroy_round, stroyiframe);
     iframe_master.from(".food_bg", { opacity: 0, scale: 0.2, ease: "power4.out" })
-                .from(".trivia_h4", { opacity: 0, scale: 0.2, ease: "power4.out" })
-                .from(".trivia_mid>iframe", { opacity: 0,rotate: 360, scale: 0.2, ease: "power4.out" })
+        .from(".trivia_h4", { opacity: 0, scale: 0.2, ease: "power4.out" })
+        .from(".trivia_mid>iframe", { opacity: 0, rotate: 360, scale: 0.2, ease: "power4.out" })
 
 
 }

@@ -680,7 +680,20 @@ ul.transtiton li {
 	background-color: #a25b41;
 	color: #ffffff;
 }
-
+.Food_leftdouble, .Food_rightdouble{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 2.5rem;
+	color: #a25b41;
+	cursor: pointer;
+}
+.Food_leftdouble{
+	left: -5%;
+}
+.Food_rightdouble{
+	right: -5%;
+}
 .prevwrapper {
 	position: absolute;
 	top: -100px;
@@ -781,7 +794,17 @@ ul.transtiton li {
 .title1_tw_Food::after {
 	width: 90%;
 }
-
+.about_dalinpo_row{
+	margin: 30px 0px;
+}
+.about_dalinpo_row>.slick-list>.slick-track>.slick-slide{
+	opacity: 0.3;
+	margin: 0 15px;
+}
+.about_dalinpo_row>.slick-list>.slick-track>.slick-center{
+	opacity: 1;
+	margin: 0 15px;
+}
 .Food_content_img {
 	position: relative;
 	margin: 0 15px;
@@ -1188,9 +1211,15 @@ ul.transtiton li {
 	}
 
 	.Food_content_img {
-		margin: 10px;
+		margin: 10px auto;
+		padding: 0 45px;
 	}
-
+	.Food_rightdouble{
+		right: 3%;
+	}
+	.Food_leftdouble{
+		left: 3%;
+	}
 	.c-card__figure>img {
 		margin: 0px;
 		width: 90%;
@@ -1249,6 +1278,7 @@ ul.transtiton li {
 	color: #fff;
 	text-shadow: 2px 9px 8px #545454;
 	text-align: center;
+	white-space:nowrap;
 }
 
 .about_section1 {
@@ -1403,9 +1433,11 @@ ul.transtiton li {
 	margin: 30px 0px 0px 0px;
 	position: relative;
 	overflow: hidden;
-	padding-bottom: 200px;
+	padding-bottom: 60px;
 }
-
+.about_dalinpo_img1{
+	height: 60vh;
+}
 .about_dalinpo_img {
 	width: 100%;
 	box-shadow: 1px 1px 3px rgb(190, 190, 190);
@@ -1434,10 +1466,11 @@ ul.transtiton li {
 
 .about_dalinpo_cloud1 {
 	background-image: url("../images/未命名-1工作區域-2.png");
-	bottom: 20px;
-	right: 20%;
-	width: 250px;
-	height: 70px;
+	bottom: 60px;
+    right: 5%;
+    width: 250px;
+    height: 70px;
+    z-index: -1;
 }
 
 .about_dalinpo_cloud2 {
@@ -1459,8 +1492,8 @@ ul.transtiton li {
 
 .about_dalinpo_cloud5 {
 	background-image: url("../images/小雲-1.png");
-	bottom: -30%;
-	right: -66%;
+	bottom: 35%;
+    right: -10%;
 	z-index: -1;
 	width: 280px;
 	height: 110px;
