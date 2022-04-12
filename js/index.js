@@ -264,7 +264,7 @@ $(document).ready(function () {
     var timer = setInterval(function () {
         $('#app').addClass('complete');
         setTimeout(eatCount, 500)
-    }, 3100)
+    }, 5000)
     function eatCount() {
         $('#app').css('display', 'none')
     }
