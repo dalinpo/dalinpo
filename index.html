@@ -18,7 +18,8 @@
 		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
-	<link rel="stylesheet" href="https://mreq.github.io/slick-lightbox/gh-pages/bower_components/slick-carousel/slick/slick-theme.css">
+	<link rel="stylesheet"
+		href="https://mreq.github.io/slick-lightbox/gh-pages/bower_components/slick-carousel/slick/slick-theme.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,10 +29,11 @@
 </head>
 
 <body class="body-overflow" data-barba="wrapper" data-barba-namespace="page-a">
-	<audio autoplay="autoplay" hidden="true" autostart="true" controls="controls"loop="loop" 
-	src="https://dalinpo.github.io/dalinpo/video/%E5%A4%A7%E6%9E%97%E8%92%B2%E4%B9%8B%E6%AD%8C.mp3">
-  你的瀏覽器版本太低，不支援audio標籤
-</audio>
+	<audio id="audio" height="100" width="100" style="opacity:0" preload="auto" controls hidden="true">
+		<source src="./video/大林蒲之歌.mp3" type="audio/mpeg" />
+		<source src="./video/大林蒲之歌.mp3" type="audio/ogg" />
+		<embed height="50" width="100" src="./video/大林蒲之歌.mp3" />
+	 </audio>
 
 	<!-- loading -->
 	<div id="app">
@@ -104,22 +106,19 @@
 						</div>
 						<div><a href="Port_section2.html" class="is-hover">
 								<figure class="c-card__figure js-effect-photo" style="margin-bottom:0.5rem">
-									<img src="./images/大林蒲/DJI_0367.jpg"
-										alt="">
+									<img src="./images/大林蒲/DJI_0367.jpg" alt="">
 								</figure>
 								<h3 class="c-card__title"><span class="c-anchor-lineIn">大林蒲</span></h3>
 							</a></div>
 						<div><a href="Port_section3.html" class="is-hover">
 								<figure class="c-card__figure js-effect-photo" style="margin-bottom:0.5rem">
-									<img src="./images/鳳林宮/2020.10.25DSC_9367.jpg"
-										alt="">
+									<img src="./images/鳳林宮/2020.10.25DSC_9367.jpg" alt="">
 								</figure>
 								<h3 class="c-card__title"><span class="c-anchor-lineIn">鳳林宮</span></h3>
 							</a></div>
 						<div><a href="Port_section4.html" class="is-hover">
 								<figure class="c-card__figure js-effect-photo" style="margin-bottom:0.5rem">
-									<img src="./images/古井/2017.05.31DSC_8479姓林.jpg"
-										alt="">
+									<img src="./images/古井/2017.05.31DSC_8479姓林.jpg" alt="">
 								</figure>
 								<h3 class="c-card__title"><span class="c-anchor-lineIn">古井</span></h3>
 							</a></div>
@@ -138,23 +137,20 @@
 						<div>
 							<a href="story2.html" class="is-hover">
 								<figure class="c-card__figure js-effect-photo" style="margin-bottom:0.5rem">
-									<img src="./images/影片圖.001.jpeg"
-										alt="">
+									<img src="./images/影片圖.001.jpeg" alt="">
 								</figure>
 								<!-- <h3 class="c-card__title"><span class="c-anchor-lineIn">那些年屬於我們的大林蒲</span></h3> -->
 							</a>
 						</div>
 						<div><a href="story.html" class="is-hover">
 								<figure class="c-card__figure js-effect-photo" style="margin-bottom:0.5rem">
-									<img src="./images/影片圖.002.jpeg"
-										alt="">
+									<img src="./images/影片圖.002.jpeg" alt="">
 								</figure>
 								<!-- <h3 class="c-card__title"><span class="c-anchor-lineIn">看見大林蒲</span></h3> -->
 							</a></div>
 						<div><a href="story3.html" class="is-hover">
 								<figure class="c-card__figure js-effect-photo" style="margin-bottom:0.5rem">
-									<img src="./images/影片圖.003.jpeg"
-										alt="">
+									<img src="./images/影片圖.003.jpeg" alt="">
 								</figure>
 								<!-- <h3 class="c-card__title"><span class="c-anchor-lineIn">大林蒲之歌</span></h3> -->
 							</a></div>
@@ -187,13 +183,14 @@
 			<div class="row Food_row">
 				<div class="col-12 col-md-4 ">
 					<div class="Food_content_img Food_img1">
-						<img src="./images/1648622119129.jpg"
-							alt="">
+						<img src="./images/1648622119129.jpg" alt="">
 						<div class="overlay">
 							<div class="food_a_text">
 								<h4 class="food_title">爌肉飯</h4>
 								<hr>
-								<p class="food_contet_open">一進到店家裡就被他們親切的服務感動，偷偷告訴大家這裡有提供免費的清湯，在夏天烈日高照的午後也不怕炎熱店內開放涼爽爽冷氣，讓用餐的顧客有個舒適的溫度用餐，餐點十分美味，值得前來。</p>
+								<p class="food_contet_open">
+									一進到店家裡就被他們親切的服務感動，偷偷告訴大家這裡有提供免費的清湯，在夏天烈日高照的午後也不怕炎熱店內開放涼爽爽冷氣，讓用餐的顧客有個舒適的溫度用餐，餐點十分美味，值得前來。
+								</p>
 								<p style="display: none;" class="food_contet_fill">
 									一進到店家裡就被他們親切的服務感動，偷偷告訴大家這裡有提供免費的清湯，在夏天烈日高照的午後也不怕炎熱店內開放涼爽爽冷氣，讓用餐的顧客有個舒適的溫度用餐，餐點十分美味，值得前來。<br>
 									爌肉飯💰40 肥瘦適中 不油膩<br>
@@ -203,20 +200,20 @@
 									🏠高雄市小港區鳳林路171號<br>
 									⏰10:30～19:00<br>
 									🗓未定公休日<br>
-									</p>
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-12 col-md-4">
 					<div class="Food_content_img Food_img2">
-						<img src="./images/1648622139979.jpg"
-							alt="">
+						<img src="./images/1648622139979.jpg" alt="">
 						<div class="overlay">
 							<div class="food_a_text">
-								<h4  class="food_title">老師傅水餃店</h4>
+								<h4 class="food_title">老師傅水餃店</h4>
 								<hr>
-								<p class="food_contet_open">一到中午我們看見有一間店家高朋滿座，聽說這是一到用餐時間就是熱門排隊的店家，用銅板價卻可以享用到大份量，可說是平價CP值超高的美食呀😋</p>
+								<p class="food_contet_open">
+									一到中午我們看見有一間店家高朋滿座，聽說這是一到用餐時間就是熱門排隊的店家，用銅板價卻可以享用到大份量，可說是平價CP值超高的美食呀😋</p>
 								<p style="display: none;" class="food_contet_fill">
 									🥟一到中午我們看見有一間店家高朋滿座，聽說這是一到用餐時間就是熱門排隊的店家，用銅板價卻可以享用到大份量，可說是平價CP值超高的美食呀😋<br>
 									水餃10顆💰40<br>
@@ -234,13 +231,14 @@
 				</div>
 				<div class="col-12 col-md-4">
 					<div class="Food_content_img Food_img3">
-						<img src="./images/1648622167197.jpg"
-							alt="">
+						<img src="./images/1648622167197.jpg" alt="">
 						<div class="overlay">
 							<div class="food_a_text">
-								<h4  class="food_title">姊妹剉冰</h4>
+								<h4 class="food_title">姊妹剉冰</h4>
 								<hr>
-								<p class="food_contet_open">姊妹剉冰座落在鳳林路上小小的攤位，路邊擺放一張桌子及幾張椅子，攤位不是非常的引人注目，賣的冰品也不像一般店面口味非常多元，但老闆娘的熱心招呼，加上細心的介紹，讓這家店不再平凡。高雄天氣十分炎熱，推薦有去大林蒲的遊客可以去試試。</p>
+								<p class="food_contet_open">
+									姊妹剉冰座落在鳳林路上小小的攤位，路邊擺放一張桌子及幾張椅子，攤位不是非常的引人注目，賣的冰品也不像一般店面口味非常多元，但老闆娘的熱心招呼，加上細心的介紹，讓這家店不再平凡。高雄天氣十分炎熱，推薦有去大林蒲的遊客可以去試試。
+								</p>
 								<p style="display: none;" class="food_contet_fill">
 									🧊姊妹剉冰座落在鳳林路上小小的攤位，路邊擺放一張桌子及幾張椅子，攤位不是非常的引人注目，賣的冰品也不像一般店面口味非常多元，但老闆娘的熱心招呼，加上細心的介紹，讓這家店不再平凡。高雄天氣十分炎熱，推薦有去大林蒲的遊客可以去試試。<br>
 									哈密瓜煉乳剉冰💰45<br>
@@ -259,13 +257,13 @@
 				</div>
 				<div class="col-12 col-md-4 ">
 					<div class="Food_content_img Food_img4">
-						<img src="./images/1648622167197.jpg"
-							alt="">
+						<img src="./images/1648622167197.jpg" alt="">
 						<div class="overlay">
 							<div class="food_a_text">
-								<h4  class="food_title">傳統挫冰店</h4>
+								<h4 class="food_title">傳統挫冰店</h4>
 								<hr>
-								<p class="food_contet_open">這是間一位阿姨經營的傳統挫冰店。內用區域約兩張四人桌大小，雖然區域不大，但生意熱絡許多熟客來自於附近的家庭主婦或鄰近地區的上班人士。</p>
+								<p class="food_contet_open">
+									這是間一位阿姨經營的傳統挫冰店。內用區域約兩張四人桌大小，雖然區域不大，但生意熱絡許多熟客來自於附近的家庭主婦或鄰近地區的上班人士。</p>
 								<p style="display: none;" class="food_contet_fill">
 									🧊這是間一位阿姨經營的傳統挫冰店。內用區域約兩張四人桌大小，雖然區域不大，但生意熱絡許多熟客來自於附近的家庭主婦或鄰近地區的上班人士。<br>
 									八寶冰💰40<br>
@@ -284,20 +282,19 @@
 							</div>
 						</div>
 					</div>
-				</div> 
+				</div>
 				<div class="col-12 col-md-4 ">
 					<div class="Food_content_img Food_img5">
-						<img src="./images/66.jpg"
-							alt="">
+						<img src="./images/66.jpg" alt="">
 						<div class="overlay">
 							<div class="food_a_text">
-								<h4  class="food_title">66炸雞行</h4>
+								<h4 class="food_title">66炸雞行</h4>
 								<hr>
 								<p class="food_contet_open">在大林派出所旁有一間香味四溢的攤販，販售著傳統的炸物</p>
 								<p style="display: none;" class="food_contet_fill">
 									🍗 在大林派出所旁有一間香味四溢的攤販，販售著傳統的炸物，最具特色的炸物就是「炸蕃薯」，店家使用帶皮蕃薯讓口感更加厚實。
 									主要商品：炸春捲、炸雞腿、傳統米血糕等。<br>
-									
+
 									炸蕃薯 💰30/份<br>
 									甜不辣 💰 30/份<br>
 									炸雞腿 💰 30/支<br>
@@ -316,8 +313,7 @@
 				</div>
 				<div class="col-12 col-md-4 ">
 					<div class="Food_content_img Food_img6">
-						<img src="./images/1648622067346.jpg"
-							alt="">
+						<img src="./images/1648622067346.jpg" alt="">
 						<div class="overlay">
 							<div class="food_a_text">
 								<h4 class="food_title">大林蒲辣醬麵店</h4>
@@ -342,15 +338,15 @@
 				</div>
 				<div class="col-12 col-md-4 ">
 					<div class="Food_content_img Food_img6">
-						<img src="./images/1648622092763.jpg"
-							alt="">
+						<img src="./images/1648622092763.jpg" alt="">
 						<div class="overlay">
 							<div class="food_a_text">
 								<h4 class="food_title">柑芭嗏</h4>
 								<hr>
 								<p class="food_contet_open">你們知道在鳳林宮的斜對面7-11的旁邊轉角處，有著一間小小的店面，有句話說「麻雀雖小 五臟俱全」</p>
 								<p style="display: none;" class="food_contet_fill">
-									🥤你們知道在鳳林宮的斜對面7-11的旁邊轉角處，有著一間小小的店面，有句話說「麻雀雖小 五臟俱全」，完全就是這家飲料店的形容詞，飲品有多樣化的口味選擇，不僅好喝，還有一位親民美麗的老闆娘熱情招待，在炎熱的天氣，煩躁的心情，都瞬間開朗了起來。
+									🥤你們知道在鳳林宮的斜對面7-11的旁邊轉角處，有著一間小小的店面，有句話說「麻雀雖小
+									五臟俱全」，完全就是這家飲料店的形容詞，飲品有多樣化的口味選擇，不僅好喝，還有一位親民美麗的老闆娘熱情招待，在炎熱的天氣，煩躁的心情，都瞬間開朗了起來。
 									炎熱的夏季 來杯冰涼的飲料消消暑吧🧊🧊<br>
 									——————————————<br>
 									冰鎮山粉圓 💰25<br>
@@ -381,12 +377,12 @@
 						</figure>
 						<p class="c-card__time"><time>2021.11.28</time></p>
 						<h3 class="c-card__title card_title"><span class="c-anchor-lineIn">【路程影片】</span></h3>
-						<iframe src="https://www.youtube.com/embed/f3aehLYrgfg" ></iframe>
-					
+						<iframe src="https://www.youtube.com/embed/f3aehLYrgfg"></iframe>
+
 					</div>
 				</div>
 				<div class="col-6 col-md-4 card_content">
-					<div  class="is-hover">
+					<div class="is-hover">
 						<figure class="c-card__figure js-effect-photo card_figure_content">
 							<img src="./images/花絮封面_2021.05.06.png" alt="">
 						</figure>
@@ -396,13 +392,13 @@
 					</div>
 				</div>
 				<div class="col-6 col-md-4 card_content">
-					<div  class="is-hover">
+					<div class="is-hover">
 						<figure class="c-card__figure js-effect-photo card_figure_content">
 							<img src="./images/花絮封面_2020.12.19.png" alt="">
 						</figure>
 						<p class="c-card__time"><time>2020.12.19</time></p>
 						<h3 class="c-card__title card_title"><span class="c-anchor-lineIn">【童玩.大林蒲】</span></h3>
-						<iframe src="https://www.youtube.com/embed/p_6Ll4GIJv8" ></iframe>
+						<iframe src="https://www.youtube.com/embed/p_6Ll4GIJv8"></iframe>
 					</div>
 				</div>
 			</div>

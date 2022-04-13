@@ -263,10 +263,12 @@ $(document).ready(function () {
     var percent = 0;
     var timer = setInterval(function () {
         $('#app').addClass('complete');
+        $('audio').attr({'autoplay':'autoplay','autostart':'true'})
         setTimeout(eatCount, 500)
     }, 4000)
     function eatCount() {
-        $('#app').css('display', 'none')
+        $('#app').css('display', 'none');
+        
     }
 
     $('.about_section2').mousemove(function (evt) {
