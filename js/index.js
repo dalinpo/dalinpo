@@ -263,16 +263,12 @@ $(document).ready(function () {
     var percent = 0;
     var timer = setInterval(function () {
         $('#app').addClass('complete');
-        var music = $('#audio')
-                if (music.paused) { //判讀是否播放  
-                    music.paused=false;
-                    music.play(); //沒有就播放 
-                }    
+
         setTimeout(eatCount, 500)
     }, 4000)
     function eatCount() {
         $('#app').css('display', 'none');
-        
+   
     }
 
     $('.about_section2').mousemove(function (evt) {
