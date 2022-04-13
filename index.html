@@ -29,13 +29,8 @@
 </head>
 
 <body class="body-overflow" data-barba="wrapper" data-barba-namespace="page-a">
-	<!-- <audio id="audio" preload="auto" controls loop="true">
-		<source src="./video/大林蒲之歌.mp3" type="audio/mpeg" />
-		<source src="./video/大林蒲之歌.mp3" type="audio/ogg" />
-		<embed height="50" width="100" loop="1" hidden="true" autostart="true" src="./video/大林蒲之歌.mp3" />
-	 </audio> -->
-	 <!-- <embed id="audio" src="./video/大林蒲之歌.mp3" loop="0" hidden="true" volume="50"autostart="true"></embed> -->
-	<!-- loading -->
+	<audio id='myAudioElem' autoplay hidden="true" controls src='https://dalinpo.github.io/dalinpo/video/大林蒲之歌.mp3'></audio>
+	<!-- <div id="myaudio"></div> -->
 	<div id="app">
 		<div id="animation_container" style="width:550px; height:400px">
 			<canvas id="canvas" width="550" height="400"
@@ -418,16 +413,21 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
 	<script src="js/class_popup.js"></script>
 	<script src="js/index.js"></script>
-	<script>
+	<!-- <script>
 		var source = "https://dalinpo.github.io/dalinpo/video/大林蒲之歌.mp3"
+		var loops = "1";
 		var audio = document.createElement("audio");
 		audio.autoplay = true;
+		audio.controls = true;
 		audio.load()
 		audio.addEventListener("load", function() { 
 			audio.play(); 
 		}, true);
+		audio.play(); 
 		audio.src = source;
-	</script>
+		audio.loop = loops;
+		document.getElementById('myaudio').appendChild(audio)
+	</script> -->
 </body>
 
 </html>

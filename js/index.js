@@ -203,26 +203,26 @@ $(document).ready(function () {
         nextArrow: false,
         prevArrow: false,
         responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
             }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          }
         ]
-      });
+    });
     // 您好大林蒲
     $('.slider-for').slick({
         slidesToShow: 1,
@@ -263,17 +263,11 @@ $(document).ready(function () {
     var percent = 0;
     var timer = setInterval(function () {
         $('#app').addClass('complete');
-        // var music = $('#audio');
-        // if (music.paused) { //判讀是否播放 
-        //     console.log(music.paused) 
-        //     music.paused=false;
-        //     music.play(); //沒有就播放 
-        // } 
         setTimeout(eatCount, 500)
     }, 4000)
     function eatCount() {
         $('#app').css('display', 'none');
-   
+
     }
 
     $('.about_section2').mousemove(function (evt) {
@@ -294,9 +288,8 @@ $(document).ready(function () {
         $('.cloud_content_p2').css("transform", "translateX(" + (index_scrolly / 20) + "px)");
         $('.cloud_content_p3').css("transform", "translateX(" + (index_scrolly / -20) + "px)");
     })
+
 });
-
-
 
 
 // 視差滾動動畫
@@ -543,3 +536,11 @@ function showstroy_round() {
 
 }
 
+
+function byId(myAudioElem) { return document.getElementById('myAudioElem') }
+
+window.addEventListener('load', onDocLoaded, false);
+
+function onDocLoaded(evt) {
+    setTimeout(function () { byId('myAudioElem').play() }, 3000);
+}
