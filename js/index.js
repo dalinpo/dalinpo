@@ -536,11 +536,6 @@ function showstroy_round() {
 
 }
 
-
-function byId(myAudioElem) { return document.getElementById('myAudioElem') }
-
-window.addEventListener('load', onDocLoaded, false);
-
-function onDocLoaded(evt) {
-    setTimeout(function () { byId('myAudioElem').play() }, 3000);
+window.onbeforeunload=function (){
+    $('#myAudioElem').play();
 }
