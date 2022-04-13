@@ -263,7 +263,11 @@ $(document).ready(function () {
     var percent = 0;
     var timer = setInterval(function () {
         $('#app').addClass('complete');
-        $('audio').attr({'autoplay':'autoplay','autostart':'true'})
+        var music = $('#audio')
+                if (music.paused) { //判讀是否播放  
+                    music.paused=false;
+                    music.play(); //沒有就播放 
+                }    
         setTimeout(eatCount, 500)
     }, 4000)
     function eatCount() {
