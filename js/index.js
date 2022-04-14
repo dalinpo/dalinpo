@@ -63,16 +63,9 @@ $(document).ready(function () {
 
     }
     hasclass();
-    
-
-    $(window).scroll(function(){
-        const audioCls = new Audio("https://dalinpo.github.io/dalinpo/video/大林蒲之歌.mp3");
-        if($(window).scrollTop()<=0){
-            $("#myAudioElem").trigger('play');
-        }
-    })
 
 
+    // 圖片輪播
     $('.banner').slick({
         dots: false,
         fade: true,
@@ -84,7 +77,6 @@ $(document).ready(function () {
         adaptiveHeight: true,
         appendArrows: false
     });
-
     $('.Food_row').slick({
         slidesToShow: 3,
         centerPadding: '120px',
