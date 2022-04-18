@@ -25,13 +25,19 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
-
+	
 </head>
 
 <body class="body-overflow" data-barba="wrapper" data-barba-namespace="page-a">
-	<audio loop autoplay controls id="myVideo" hidden="true">
-		<source src="https://dalinpo.github.io/dalinpo/video/大林蒲之歌.mp3" type="video/mp4">
-	</audio>
+	<!-- <audio loop autoplay controls id="myVideo" hidden="true">
+		<source src="" type="video/mp4">
+	</audio> -->
+	<!-- <audio id="audioID" loop> <source src="https://dalinpo.github.io/dalinpo/video/大林蒲之歌.mp3"  type="audio/mp3"></audio> -->
+	<audio id="divAudio" loop controls autoplay >
+		<source src="https://dalinpo.github.io/dalinpo/video/大林蒲之歌.mp3" type="audio/mp3">
+	 </audio>
+
+
 
 
 	<div id="app">
@@ -374,7 +380,7 @@
 							<img src="./images/花絮封面_2021.11.28.png" alt="">
 						</figure>
 						<p class="c-card__time"><time>2021.11.28</time></p>
-						<h3 class="c-card__title card_title"><span class="c-anchor-lineIn">【路程影片】</span></h3>
+						<h3 class="c-card__title card_title"><span class="c-anchor-lineIn">【高餐x大林蒲】</span></h3>
 						<iframe src="https://www.youtube.com/embed/f3aehLYrgfg"></iframe>
 
 					</div>
@@ -385,7 +391,7 @@
 							<img src="./images/花絮封面_2021.05.06.png" alt="">
 						</figure>
 						<p class="c-card__time"><time>2021.05.06</time></p>
-						<h3 class="c-card__title card_title"><span class="c-anchor-lineIn">【走訪影片】</span></h3>
+						<h3 class="c-card__title card_title"><span class="c-anchor-lineIn">【出發。大林蒲】</span></h3>
 						<iframe src="https://www.youtube.com/embed/eBStEkU3vkM"></iframe>
 					</div>
 				</div>
@@ -413,7 +419,6 @@
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
 	<script src="js/class_popup.js"></script>
 	<script src="js/index.js"></script>

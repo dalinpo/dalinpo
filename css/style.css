@@ -1015,8 +1015,13 @@ ul.transtiton li {
 .footerlogo>img {
 	width: 100%;
 }
-
-.footertext>p {
+.footertext{
+	margin: 0px 10px;
+}
+.footertext>.row{
+	margin: 10px;
+}
+.footertext>.row>.col-md-4>a {
 	color: #fff;
 	font-size: 20px;
 	text-align: center;
