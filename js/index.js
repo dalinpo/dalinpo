@@ -530,8 +530,6 @@ $(document).ready(function () {
         iframe_master.from(".food_bg", { opacity: 0, scale: 0.2, ease: "power4.out" })
             .from(".trivia_h4", { opacity: 0, scale: 0.2, ease: "power4.out" })
             .from(".trivia_mid>iframe", { opacity: 0, rotate: 360, scale: 0.2, ease: "power4.out" })
-
-
     }
 
 
