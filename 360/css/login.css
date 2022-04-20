@@ -1,0 +1,126 @@
+* {
+    font-family: 'Noto Sans TC', sans-serif !important;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#bg {
+    left: 0%;
+    top: -40%;
+    width: 200%;
+    position: absolute;
+    animation-name: Move;
+    animation-duration: 10s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#link {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    max-width: 300px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #fefefe;
+    border: 2px solid;
+    text-align: center;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    font-weight: 900;
+    animation-name: Show;
+    animation-duration: 1s;
+    animation-delay: 10s;
+    animation-fill-mode: forwards;
+}
+
+#link:hover {
+    background: rgba(200, 200, 200, 0.5);
+    color: #222222;
+}
+
+@keyframes Move {
+    25% {
+        left: -100%;
+        top: -40%;
+        width: 200%;
+    }
+
+    50% {
+        left: 0;
+        width: 200%;
+    }
+
+    75% {
+        left: -100%;
+        top: -100%;
+        width: 200%;
+    }
+
+    100% {
+        left: 0%;
+        top: 0;
+        width: 100%;
+    }
+}
+
+@keyframes Show {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+@media screen and (max-width:430px) {
+    #bg {
+        left: -0%;
+        bottom: -100%;
+        height: 200%;
+    }
+
+    @keyframes Move {
+        25% {
+            left: -200%;
+            bottom: -100%;
+            height: 200%;
+        }
+
+        50% {
+            left: 0;
+            bottom: -100%;
+            height: 200%;
+        }
+
+        75% {
+            left: -200%;
+            bottom: 0;
+            height: 200%;
+        }
+
+        100% {
+            left: -130%;
+            bottom: 0;
+            height: 100%;
+        }
+    }
+}
