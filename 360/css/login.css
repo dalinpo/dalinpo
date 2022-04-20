@@ -10,12 +10,12 @@ html {
     margin: 0;
     position: relative;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #bg {
-    left: 0%;
-    top: -40%;
-    width: 200%;
+    min-width: 100%;
+    min-height: 100%;
     position: absolute;
     animation-name: Move;
     animation-duration: 10s;
@@ -55,6 +55,12 @@ html {
 }
 
 @keyframes Move {
+    0% {
+        left: 0%;
+        top: -40%;
+        width: 200%;
+    }
+
     25% {
         left: -100%;
         top: -40%;
@@ -68,7 +74,7 @@ html {
 
     75% {
         left: -100%;
-        top: -100%;
+        top: -90%;
         width: 200%;
     }
 
@@ -92,13 +98,14 @@ html {
 }
 
 @media screen and (max-width:430px) {
-    #bg {
-        left: -0%;
-        bottom: -100%;
-        height: 200%;
-    }
 
     @keyframes Move {
+        0% {
+            left: -0%;
+            bottom: -100%;
+            height: 200%;
+        }
+
         25% {
             left: -200%;
             bottom: -100%;
