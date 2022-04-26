@@ -424,18 +424,6 @@ $(document).ready(function () {
             .from(".footer_people", { y: 50, opacity: 0 })
     }
 
-    let aboutdalinpo1 = gsap.timeline({
-        ease: Back.inOut,
-        scrollTrigger: {
-            trigger: '.about_dalinpo1',
-            start: "top center",
-            end: "+=500",
-        }
-    })
-    aboutdalinpo1.from(".about_dalinpo_title", { x: -100, opacity: 0 })
-        .from(".about_dalinpo_content1", { x: -100, opacity: 0 })
-        .from(".about_dalinpo_cloud2", { x: 100, opacity: 0 })
-        .from(".about_dalinpo_cloud1", { x: 100, opacity: 0 })
 
     let aboutdalinpo2 = gsap.timeline({
         ease: Back.inOut,
@@ -450,16 +438,6 @@ $(document).ready(function () {
         .from(".about_dalinpo_content2", { y: 100, opacity: 0 })
         .from(".about_dalinpo_row", { y: 210, opacity: 0 })
 
-
-    let about_dalinpo3 = gsap.timeline({
-        ease: Back.inOut,
-        scrollTrigger: {
-            trigger: '.about_dalinpo3',
-            start: "top center",
-            end: "+=500",
-        }
-    })
-    about_dalinpo3.from(".about_dalinpo3_content", { y: -220, opacity: 0 })
 
     let founding_section1 = gsap.timeline({
         ease: Back.inOut,

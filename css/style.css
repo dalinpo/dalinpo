@@ -1412,127 +1412,75 @@ ul.transtiton li {
 }
 
 /* about_dalinpo */
-.about_dalinpo1 {
-	padding: 30px 0px;
-	position: relative;
-	overflow: hidden;
-}
-
-.about_dalinpo_title {
-	padding-bottom: 30px;
+.about_dalinpo_header{
+	margin: 240px 0px;
+	padding: 0px !important;
 	position: relative;
 }
-
-.about_dalinpo_content {
-	font-size: 1.3rem;
-	line-height: 2.5rem;
-	letter-spacing: 8px;
-
+.aboutleft_text h2, .aboutright_text h2{
+	font-size: 1.65rem;
+    margin-bottom: 25px;
+    color: #5c5b5b;
+    margin-top: 20px;
+}
+.aboutleft_text p, .aboutright_text p{
+	color: rgb(150, 150, 150);
+	margin-bottom: 50px;
+	line-height: 1.95rem;
+    letter-spacing: 1px;
+    font-size: 1.05rem;
 }
 
-.about_dalinpo2 {
-	margin: 30px 0px 0px 0px;
-	position: relative;
-	overflow: hidden;
-	padding-bottom: 60px;
+.aboutleft_text, .aboutright_text{
+	background-color: rgba(255,255,255,0.9);
+	z-index: 1;
+	display: inline-block;
+	width: 39%;
+	vertical-align: middle;
+	
 }
-.about_dalinpo_img1{
-	height: 60vh;
+.aboutleft_text{
+	transform: translateX(15%);
+	padding: 10px 3% 10px 5px;
 }
-.about_dalinpo_img {
+.aboutright_text{
+	transform: translateX(-15%);
+	padding: 10px 5px 10px 3%;
+}
+.aboutright_img, .aboutleft_img{
+	display: inline-block;
+	width: 60%;
+}
+.aboutright_img>img,.aboutleft_img>img{
 	width: 100%;
-	box-shadow: 1px 1px 3px rgb(190, 190, 190);
 }
 
-.about_dalinpo_title::before {
-	content: "";
+.about_more_link a{
+	padding: 8px 20px;
+    color: #f1bda1;
+    border: 2px solid #f1bda1;
+	transition: all 0.3s;
+}
+.about_more_link a:hover{
+	background-color: #f1bda1;
+	color: #fff;
+}
+
+.about_more_link_left{
+	display: flex;
+    justify-content: flex-end;
+}
+.about_cloud_grey{
 	display: inline-block;
 	position: absolute;
-	bottom: -38px;
-	left: -20%;
-	width: 240px;
-	height: 80px;
+	top: 10%;
+	left: -100px;
+	width: 200px;
+	height: 15%;
 	background-image: url('../images/未命名-1工作區域-6.png');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
-
 }
-
-.about_dalinpo_cloud {
-	position: absolute;
-	background-repeat: no-repeat;
-	display: inline-block;
-	background-size: 100% 100%;
-}
-
-.about_dalinpo_cloud1 {
-	background-image: url("../images/未命名-1工作區域-2.png");
-	bottom: 60px;
-    right: 5%;
-    width: 250px;
-    height: 70px;
-    z-index: -1;
-}
-
-.about_dalinpo_cloud2 {
-	background-image: url("../images/小雲-3.png");
-	top: 20px;
-	right: -15%;
-	width: 320px;
-	height: 100px;
-}
-
-.about_dalinpo_cloud4 {
-	background-image: url("../images/小雲-1.png");
-	bottom: 20%;
-	left: -45%;
-	z-index: -1;
-	width: 280px;
-	height: 110px;
-}
-
-.about_dalinpo_cloud5 {
-	background-image: url("../images/小雲-1.png");
-	bottom: 35%;
-    right: -10%;
-	z-index: -1;
-	width: 280px;
-	height: 110px;
-}
-
-.about_dalinpo3 {
-	margin-bottom: 200px;
-	position: relative;
-
-}
-
-.dalinpo_footer_img {
-	background-image: url("../images/1646640393791.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-attachment: fixed;
-	width: 100%;
-	height: 500px;
-}
-
-.about_dalinpo3_content {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	display: inline-block;
-	padding: 55px 20px;
-	background-color: rgba(255, 255, 255, 0.8);
-	border-radius: 15px;
-}
-
-.dalinpo_bottom {
-	text-align: center;
-	letter-spacing: 10px;
-	font-size: 20px;
-	line-height: 36px;
-}
-
 /* 創刊號 */
 .founding_section1::after{
 	content: "";
@@ -1611,6 +1559,7 @@ ul.transtiton li {
 .about_h4_title{
 	text-align: center;
 	color: #5a5a5a;
+	font-size: 1.7rem;
 }
 
 .storycontent{
@@ -2397,10 +2346,10 @@ ul.transtiton li {
 		font-size: 1.155rem;
 	}
 	.slider_hello_bgimg{
-		height: 60vh;
+		height: auto;
 	}
 	.slider_hellonavimg{
-		height: 10vh;
+		height: auto;
 	}
 	.stroy_img{
 		width: 100%;
@@ -2415,6 +2364,44 @@ ul.transtiton li {
 	.storycontent{
 		height: 100vh;
     	margin: 80px 0px 90px 0px;
+	}
+	/* about-dalinpo */
+	.about_dalinpo_header{
+		margin: 60px 0px;
+	}
+	.aboutleft_text h2, .aboutright_text h2{
+		text-align: center;
+	}
+	.aboutleft_text p, .aboutright_text p{
+		text-align: center;
+	}
+	
+	.aboutleft_text, .aboutright_text{
+		background-color: rgba(255,255,255,0.9);
+		display: inline-block;
+		width: 100%;
+	}
+	.aboutleft_text{
+		transform: translateX(0%);
+
+	}
+	.aboutright_text{
+		transform: translateX(0%);
+	}
+	.aboutright_img, .aboutleft_img{
+		display: inline-block;
+		width: 100%;
+	}
+	.about_more_link_left,.about_more_link{
+		display: flex;
+		justify-content: space-around;
+	}
+	.about_row2,.about_row4{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.aboutleft_text p, .aboutright_text p{
+		margin-bottom: 25px;
 	}
 }
 
