@@ -2506,6 +2506,9 @@ ul.transtiton li {
 		top: -13%;
 		z-index: -1;
 	}
+	.slider_hellonavli>img{
+		height: 10vh;
+	}
 }
 
 
