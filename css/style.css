@@ -2437,10 +2437,10 @@ ul.transtiton li {
 		margin: 60px 0px;
 	}
 	.aboutleft_text h2, .aboutright_text h2{
-		text-align: center;
+		text-align: left;
 	}
 	.aboutleft_text p, .aboutright_text p{
-		text-align: center;
+		text-align: left;
 	}
 	
 	.aboutleft_text, .aboutright_text{
@@ -2476,6 +2476,7 @@ ul.transtiton li {
 	}
 	.about_section1::after{
 		z-index: -1;
+		opacity: 0.2;
 	}
 	.about_content{
 		text-align: left;
@@ -2491,6 +2492,19 @@ ul.transtiton li {
 		width: 100%;
 		transform: translateX(50%);
 		bottom: -60%;
+	}
+	.about_cloud_grey{
+		top: -8%;
+		left: 0px;
+		width: 120px;
+		height: 10%;
+	}
+	.about_dalinpo2_cloud,.about_dalinpo2_grey{
+		z-index: -1;
+	}
+	.about_dalinpo3_grey1{
+		top: -13%;
+		z-index: -1;
 	}
 }
 
