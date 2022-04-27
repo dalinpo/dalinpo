@@ -1473,11 +1473,78 @@ ul.transtiton li {
 .about_cloud_grey{
 	display: inline-block;
 	position: absolute;
+	top: -30%;
+    left: 0px;
+    width: 230px;
+    height: 11%;
+	background-image: url('../images/grey.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+
+}
+.about_dalinpo2_grey{
+	display: inline-block;
+	position: absolute;
+	top: -30%;
+    right: 0px;
+    width: 230px;
+    height: 11%;
+	background-image: url('../images/grey.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.about_dalinpo2_cloud{
+	display: inline-block;
+	position: absolute;
+	top: -40%;
+    left: 0px;
+    width: 240px;
+    height: 15%;
+	background-image: url('../images/小雲-1.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.about_dalinpo3_grey{
+	display: inline-block;
+	position: absolute;
+	bottom: -30%;
+    right: 0px;
+    width: 230px;
+    height: 11%;
+	background-image: url('../images/grey.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.about_dalinpo3_grey1{
+	display: inline-block;
+	position: absolute;
+	top: -30%;
+    left: 0px;
+    width: 230px;
+    height: 11%;
+	background-image: url('../images/grey.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.about_dalinpo3_cloud{
+	display: inline-block;
+	position: absolute;
 	top: 10%;
-	left: -100px;
-	width: 200px;
-	height: 15%;
-	background-image: url('../images/未命名-1工作區域-6.png');
+    left: 25%;
+    width: 280px;
+    height: 15%;
+	background-image: url('../images/小雲-1.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.about_dalinpo4_cloud{
+	display: inline-block;
+	position: absolute;
+	bottom: 0%;
+    right: 30%;
+    width: 300px;
+    height: 15%;
+	background-image: url('../images/小雲-1.png');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
@@ -2402,6 +2469,28 @@ ul.transtiton li {
 	}
 	.aboutleft_text p, .aboutright_text p{
 		margin-bottom: 25px;
+	}
+	.about_h4_title{
+		text-align: left;
+
+	}
+	.about_section1::after{
+		z-index: -1;
+	}
+	.about_content{
+		text-align: left;
+	}
+	.port_content::after{
+		display: none;
+	}
+	.port_content::before{
+		display: none;
+	}
+	.slider-nav{
+		right: 50%;
+		width: 100%;
+		transform: translateX(50%);
+		bottom: -60%;
 	}
 }
 

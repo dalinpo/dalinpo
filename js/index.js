@@ -230,7 +230,8 @@ $(document).ready(function () {
         autoplay: true,
         infinite: true,
         speed: 1000,
-        asNavFor: '.slider-nav'
+        asNavFor: '.slider-nav',
+        
     });
     $('.slider-nav').slick({
         slidesToShow: 3,
@@ -248,8 +249,8 @@ $(document).ready(function () {
             {
                 breakpoint: 767,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToShow: 3,
+                    slidesToScroll: 3
                 }
             }
         ]
@@ -458,6 +459,49 @@ $(document).ready(function () {
         }
     })
     stroytiemline.from(".stroy_img", { y: 100, opacity: 0 })
+
+
+    // 關於大林埔
+    let about = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.about_dalinpo1',
+            start: "top center",
+            end: "+=600",
+        }
+    })
+    about.from('.left_text1', { x: -100, opacity: 0  })
+            .from('.aboutright_img1', { x: 100, opacity: 0  })
+    let about2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.about_dalinpo2',
+            start: "top center",
+            end: "+=600",
+        }
+    })
+    about2.from('.left_text2', { x: 100, opacity: 0  })
+    .from('.aboutright_img2', { x: -100, opacity: 0  })
+    
+    let about23 = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.about_dalinpo3',
+            start: "top center",
+            end: "+=600",
+        }
+    })
+    about23.from('.left_text3', { x: -100, opacity: 0  })
+    .from('.aboutright_img3', { x: 100, opacity: 0  })
+    
+    let about4 = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.about_dalinpo4',
+            start: "top center",
+            end: "+=600",
+        }
+    })
+    about4.from('.left_text4', { x: 100, opacity: 0  })
+    .from('.aboutright_img4', { x: -100, opacity: 0  })
+          
+
 
     // 響食記
     var Food_content_img = document.getElementsByClassName("Food_content_img")
