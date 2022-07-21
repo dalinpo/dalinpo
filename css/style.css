@@ -2065,6 +2065,7 @@ ul.transtiton li {
 	.section2 {
 		margin-bottom: 80px;
 		padding: 0.5rem 0px 6.5rem 0px;
+		overflow-y: hidden;
 	}
 
 	.content_hr {
