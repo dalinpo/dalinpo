@@ -1994,7 +1994,7 @@ ul.transtiton li {
 
 	.about_button {
 		padding: 10px 0;
-		font-size: 0.9rem;
+		font-size: 1.1rem;
 	}
 
 	.content_buttom {
@@ -2073,7 +2073,8 @@ ul.transtiton li {
 	}
 
 	.content_p {
-		line-height: 2.1rem;
+		line-height: 2.5rem;
+		font-size: 1.15rem;
 	}
 
 	.content_h3>h3 {
@@ -2082,11 +2083,11 @@ ul.transtiton li {
 
 	.c_title_en {
 		letter-spacing: 2px;
-		font-size: 2.2rem;
+		font-size: 2.6rem;
 	}
 
 	.title1_tw {
-		font-size: 1.1rem;
+		font-size: 1.4rem;
 	}
 
 	.title1_tw::after {
