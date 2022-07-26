@@ -1432,6 +1432,14 @@ ul.transtiton li {
 	padding: 0px !important;
 	position: relative;
 }
+.about_video{
+	position: absolute;
+	top: -90%;
+	left: 50%;
+	transform: translateX(-50%);
+	width:660px;
+	height:315px;
+}
 .aboutleft_text h2, .aboutright_text h2{
 	font-size: 1.65rem;
     margin-bottom: 25px;
@@ -2451,10 +2459,16 @@ ul.transtiton li {
 	}
 	/* about-dalinpo */
 	.about_dalinpo_header{
-		margin: 60px 0px;
+		margin: 100px 0px;
 	}
 	.aboutleft_text h2, .aboutright_text h2{
 		text-align: left;
+	}
+	.about_video{
+		width: 75%;
+		height: 135px;
+		z-index: 3;
+		top: -20%;
 	}
 	.aboutleft_text p, .aboutright_text p{
 		text-align: left;
